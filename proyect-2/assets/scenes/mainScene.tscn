@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://byse3jpmgnpkm"]
+
+[ext_resource type="Sky" uid="uid://ber2txbf74tf4" path="res://assets/skyBox/sky01.tres" id="1_8jaiy"]
+[ext_resource type="Material" uid="uid://dteog32ud28rn" path="res://assets/materials/greyColor.tres" id="2_8jaiy"]
+[ext_resource type="PackedScene" uid="uid://b5c4y6d0mil15" path="res://assets/scenes/cityScene.tscn" id="2_im3ye"]
+[ext_resource type="PackedScene" uid="uid://blx7sjvitg4rt" path="res://assets/scenes/VehicleScene.tscn" id="4_llb4w"]
+
+[sub_resource type="Environment" id="Environment_q43bj"]
+background_mode = 2
+sky = ExtResource("1_8jaiy")
+
+[sub_resource type="BoxMesh" id="BoxMesh_h6nc3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_llb4w"]
+
+[node name="Root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q43bj")
+
+[node name="Camera3D" type="Camera3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.9997619, 0.010060374, -0.019363405, 0, 0.88737804, 0.4610426, 0.02182092, 0.46093282, -0.88716674, 1.7439845, 2.1980844, 4.761421)
+fov = 60.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0, 12.915024, 49.888462)
+
+[node name="Asphalt" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 0.05, 0, 0, 0, 20, 5, -0.027, 10)
+material_override = ExtResource("2_8jaiy")
+mesh = SubResource("BoxMesh_h6nc3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asphalt"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asphalt/StaticBody3D"]
+shape = SubResource("BoxShape3D_llb4w")
+
+[node name="Root" parent="." instance=ExtResource("2_im3ye")]
+
+[node name="Root2" parent="." instance=ExtResource("4_llb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8912288, 0, 3.1224537)
