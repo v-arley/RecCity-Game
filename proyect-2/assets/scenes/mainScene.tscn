@@ -14,7 +14,7 @@ sky = ExtResource("1_8jaiy")
 environment = SubResource("Environment_q43bj")
 
 [node name="Camera3D" type="Camera3D" parent="WorldEnvironment"]
-transform = Transform3D(-0.7181009, -0.43700433, 0.5416256, 0, 0.77826595, 0.6279348, -0.695939, 0.45092055, -0.5588735, -6.744337, 21.064413, -16.47056)
+transform = Transform3D(-0.99997604, 0.003963857, -0.0056824936, 0, 0.82017255, 0.5721162, 0.0069284127, 0.5721025, -0.8201529, -0.36392888, 34.229805, -55.32812)
 fov = 60.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
