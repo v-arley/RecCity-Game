@@ -14,3 +14,8 @@ config/name="proyect-2"
 run/main_scene="uid://byse3jpmgnpkm"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+anti_aliasing/quality/msaa_2d=2
+anti_aliasing/quality/screen_space_aa=1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b5c4y6d0mil15"]
+[gd_scene load_steps=49 format=3 uid="uid://b5c4y6d0mil15"]
 
 [ext_resource type="PackedScene" uid="uid://bc0bjlf0m0ytc" path="res://assets/models/buildings/Building01.glb" id="3_8vnom"]
 [ext_resource type="PackedScene" uid="uid://v1hyn0j44iy8" path="res://assets/models/buildings/Building02.glb" id="4_v3aic"]
@@ -15,6 +15,14 @@
 [ext_resource type="PackedScene" uid="uid://26hs1ir350kf" path="res://assets/models/buildings/Building13.glb" id="14_v7lyx"]
 [ext_resource type="PackedScene" uid="uid://djsqsg3oh3o8o" path="res://assets/models/buildings/Building14.glb" id="15_p0ku1"]
 [ext_resource type="Material" uid="uid://dteog32ud28rn" path="res://assets/materials/greyColor.tres" id="15_v7lyx"]
+[ext_resource type="PackedScene" uid="uid://becujycirbgbm" path="res://assets/models/enviroment/Dumpster01S.glb" id="16_gdngg"]
+[ext_resource type="PackedScene" uid="uid://cirss7xjplxim" path="res://assets/models/enviroment/Dumpster02R.glb" id="17_atipe"]
+[ext_resource type="PackedScene" uid="uid://cduv1ftr4iitw" path="res://assets/models/enviroment/Dumpster03V.glb" id="18_7nkqe"]
+[ext_resource type="PackedScene" uid="uid://d3sv4c4sndnyx" path="res://assets/models/enviroment/Dumpster04Y.glb" id="19_j1rlb"]
+[ext_resource type="PackedScene" uid="uid://brhxype3kvfhi" path="res://assets/models/enviroment/Dumpster05G.glb" id="20_j5q41"]
+[ext_resource type="PackedScene" uid="uid://bld7pwf0vioab" path="res://assets/models/enviroment/trashV1.glb" id="21_j1rlb"]
+[ext_resource type="PackedScene" uid="uid://ct2royhpisejf" path="res://assets/models/enviroment/trashP1.glb" id="22_j5q41"]
+[ext_resource type="PackedScene" uid="uid://ddhwydfmo6h00" path="res://assets/models/enviroment/trashOriginal.glb" id="23_ix6cp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p0ku1"]
 
@@ -90,7 +98,7 @@ size = Vector3(5.893896, 2.487915, 7.420059)
 [node name="Root" type="Node3D"]
 
 [node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 0.01, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(98.63463, 0, 0, 0, 0.009863462, 0, 0, 0, 98.63463, 0, 0, 0)
 material_override = ExtResource("15_v7lyx")
 mesh = SubResource("BoxMesh_p0ku1")
 
@@ -166,7 +174,7 @@ mesh = SubResource("BoxMesh_lsvta")
 skeleton = NodePath("../..")
 
 [node name="Road5" type="MeshInstance3D" parent="Road"]
-transform = Transform3D(105, 0, 0, 0, 0.106, 0, 0, 0, 5.25, 0.00046975713, -0.0004801025, 50.000298)
+transform = Transform3D(105, 0, 0, 0, 0.106, 0, 0, 0, 5.25, 0.012620522, -0.05627768, 50.01657)
 material_override = ExtResource("14_8hifi")
 mesh = SubResource("BoxMesh_lsvta")
 skeleton = NodePath("../..")
@@ -852,3 +860,27 @@ shape = SubResource("BoxShape3D_u7rye")
 
 [node name="Building14" parent="Block16/Building4" instance=ExtResource("15_p0ku1")]
 transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="Dumpster01S" parent="." instance=ExtResource("16_gdngg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 16.609455, 0, 46.66595)
+
+[node name="Dumpster02R" parent="." instance=ExtResource("17_atipe")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.355492, 0, 46.654823)
+
+[node name="Dumpster03V" parent="." instance=ExtResource("18_7nkqe")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.863388, 0, 46.661903)
+
+[node name="Dumpster04Y" parent="." instance=ExtResource("19_j1rlb")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.139534, 0, 46.66279)
+
+[node name="Dumpster05G" parent="." instance=ExtResource("20_j5q41")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 20.416742, 0, 46.650677)
+
+[node name="trashV1" parent="." instance=ExtResource("21_j1rlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.333183, 0.06037968, 47.835773)
+
+[node name="trashP1" parent="." instance=ExtResource("22_j5q41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.448006, 0.0603798, 47.758217)
+
+[node name="trashOriginal" parent="." instance=ExtResource("23_ix6cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.501726, 0.060379785, 47.89745)
