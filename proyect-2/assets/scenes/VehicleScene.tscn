@@ -146,7 +146,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gun25")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgqtk"]
-size = Vector3(0.58618164, 1.4945679, 3.463501)
+size = Vector3(1.5769653, 1.5944519, 3.463501)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cvkn4"]
 _surfaces = [{
@@ -257,7 +257,7 @@ front_left_wheel = NodePath("VehicleWheel3DI")
 front_right_wheel = NodePath("VehicleWheel3DD")
 rear_left_wheel = NodePath("VehicleWheel3TI")
 rear_right_wheel = NodePath("VehicleWheel3TD")
-engine_force_strength = 450.0
+engine_force_strength = 2500.0
 
 [node name="VehicleWheel3DD" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44871223, 0.29982874, 1.1098903)
@@ -304,7 +304,7 @@ mesh = SubResource("ArrayMesh_ah76p")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013427734, 0.85873413, 0.0256958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00045776367, 0.8087921, 0.0256958)
 shape = SubResource("BoxShape3D_fgqtk")
 
 [node name="vehicle" type="Node3D" parent="."]
