@@ -1,36 +1,39 @@
-extends Node
+extends Node  # Ahora puedes usar Node en lugar de Node3D
 
 # --- Parámetros de la cámara ---
 @export var target_camera: Camera3D
 @export var target_vehicle: VehicleBody3D
 @export var position_spawn: Array[Node3D] = []
-@export var objects_model: Array[PackedScene] = [] # Array de escenas para spawnear
+@export var objects_model: Array[PackedScene] = []
 
-@export var follow_distance: float = 8.0   # Distancia detrás del vehículo
-@export var follow_height: float = 5.0     # Altura sobre el vehículo
-@export var follow_speed: float = 5.0      # Velocidad de seguimiento de la cámara
-@export var rotation_speed: float = 3.0    # Velocidad de rotación de la cámara
-@export var look_ahead_distance: float = 2.0  # Distancia para mirar adelante del vehículo
+@export var follow_distance: float = 8.0
+@export var follow_height: float = 5.0
+@export var follow_speed: float = 5.0
+@export var rotation_speed: float = 3.0
+@export var look_ahead_distance: float = 2.0
 
 # Variables
 var desired_position: Vector3
 var desired_rotation: Vector3
 
 # Configuración del sistema de spawneo
-@export var max_active_objects: int = 4  # Número máximo de objetos activos
-@export var auto_spawn_on_start: bool = true  # Spawneo automático al iniciar
-@export var initial_spawn_count: int = 1  # Cantidad de objetos a spawnear al iniciar
+@export var max_active_objects: int = 4
+@export var auto_spawn_on_start: bool = true
+@export var initial_spawn_count: int = 4
 
 # Variables internas para trackear spawns
 var spawned_objects_list: Array[Node3D] = []
+var _current_colliding: Dictionary = {}
 
 func _ready():
 	if not target_camera:
+		push_error("target_camera no está asignado.")
 		return
 	
 	if not target_vehicle:
+		push_error("target_vehicle no está asignado.")
 		return
-	
+
 	# Configurar la posición inicial de la cámara
 	update_camera_position()
 	
@@ -48,37 +51,30 @@ func _process(delta: float) -> void:
 	update_camera_position()
 	smooth_camera_movement(delta)
 
+func _physics_process(delta: float) -> void:
+	# No necesitas hacer detección manual aquí, ya que usaremos Area3D
+	pass
+
 func update_camera_position():
-	# Obtener la transformación del vehículo
 	var vehicle_transform = target_vehicle.global_transform
 	var vehicle_position = vehicle_transform.origin
-	var vehicle_forward = -vehicle_transform.basis.z  # En Godot, -Z es adelante
+	var vehicle_forward = -vehicle_transform.basis.z
 	var vehicle_right = vehicle_transform.basis.x
 	
-	# Calcular la posición deseada detrás del vehículo con altura
-	# Posición base detrás del vehículo (invertimos la dirección)
-	var back_offset = vehicle_forward * follow_distance  # Cambiado: removido el signo negativo
-	# Añadir altura
+	var back_offset = vehicle_forward * follow_distance
 	var height_offset = Vector3.UP * follow_height
-	# Combinar para obtener la posición deseada
 	desired_position = vehicle_position + back_offset + height_offset
 	
-	# Calcular hacia dónde debe mirar la cámara (un poco adelante del vehículo)
 	var look_target = vehicle_position + vehicle_forward * look_ahead_distance
-	
-	# Calcular la rotación deseada para mirar al objetivo
 	var look_direction = (look_target - desired_position).normalized()
 	desired_rotation = get_rotation_to_look_at(look_direction)
 
 func smooth_camera_movement(delta: float):
-	# Interpolar suavemente la posición
 	target_camera.global_position = target_camera.global_position.lerp(desired_position, follow_speed * delta)
 	
-	# Interpolar suavemente la rotación
 	var current_euler = target_camera.global_rotation
 	var target_euler = desired_rotation
 	
-	# Interpolar cada componente de rotación
 	current_euler.x = lerp_angle(current_euler.x, target_euler.x, rotation_speed * delta)
 	current_euler.y = lerp_angle(current_euler.y, target_euler.y, rotation_speed * delta)
 	current_euler.z = lerp_angle(current_euler.z, target_euler.z, rotation_speed * delta)
@@ -86,40 +82,31 @@ func smooth_camera_movement(delta: float):
 	target_camera.global_rotation = current_euler
 
 func get_rotation_to_look_at(direction: Vector3) -> Vector3:
-	# Calcular la rotación necesaria para mirar en la dirección especificada
-	# Crear una transformada que mire hacia la dirección
 	var up = Vector3.UP
 	var right = direction.cross(up).normalized()
 	var corrected_up = right.cross(direction).normalized()
 	
-	# Crear la base de rotación
 	var basis = Basis()
 	basis.x = right
 	basis.y = corrected_up
-	basis.z = -direction  # En Godot, -Z es adelante
+	basis.z = -direction
 	
-	# Convertir a ángulos de Euler
 	return basis.get_euler()
 
-# Función para cambiar la cámara objetivo dinámicamente
 func set_target_camera(new_camera: Camera3D):
 	target_camera = new_camera
 
-# Función para cambiar el vehículo objetivo dinámicamente
 func set_target_vehicle(new_target: VehicleBody3D):
 	target_vehicle = new_target
 	if target_vehicle and target_camera:
 		update_camera_position()
 
-# Función para ajustar la distancia de seguimiento
 func set_follow_distance(distance: float):
 	follow_distance = distance
 
-# Función para ajustar la altura de seguimiento
 func set_follow_height(height: float):
 	follow_height = height
 
-# Función para obtener información de debug
 func get_camera_info() -> Dictionary:
 	return {
 		"camera_position": target_camera.global_position if target_camera else Vector3.ZERO,
@@ -132,7 +119,6 @@ func get_camera_info() -> Dictionary:
 
 # === SISTEMA DE SPAWNEO BÁSICO ===
 
-# Spawear un objeto aleatorio en una posición libre
 func spawn_random_object() -> Node3D:
 	if objects_model.is_empty() or position_spawn.is_empty():
 		return null
@@ -147,7 +133,6 @@ func spawn_random_object() -> Node3D:
 	var random_model = randi() % objects_model.size()
 	return spawn_object_at_position(random_model, free_position)
 
-# Spawear un modelo específico en una posición específica
 func spawn_object_at_position(model_index: int, position_index: int) -> Node3D:
 	if model_index >= objects_model.size() or position_index >= position_spawn.size():
 		return null
@@ -168,13 +153,22 @@ func spawn_object_at_position(model_index: int, position_index: int) -> Node3D:
 	spawned_object.position = Vector3.ZERO
 	spawned_object.rotation = Vector3.ZERO
 	spawned_object.visible = true
-	
+
+	if spawned_object is Node:
+		spawned_object.add_to_group("objects_model")
+
+	# Conectar señales de Area3D si tiene
+	if spawned_object is Node3D:
+		for child in spawned_object.get_children():
+			if child is Area3D:
+				child.body_entered.connect(_on_area_body_entered.bind(spawned_object))
+				child.body_exited.connect(_on_area_body_exited.bind(spawned_object))
+
 	spawn_pos.add_child(spawned_object)
 	spawned_objects_list.append(spawned_object)
 	
 	return spawned_object
 
-# Spawear múltiples objetos aleatorios
 func spawn_multiple_random(count: int) -> int:
 	var spawned_count = 0
 	
@@ -187,14 +181,16 @@ func spawn_multiple_random(count: int) -> int:
 	
 	return spawned_count
 
-# Verificar si una posición está ocupada
 func is_position_occupied(position_index: int) -> bool:
 	if position_index >= position_spawn.size():
 		return true
 	
-	return position_spawn[position_index].get_child_count() > 0
+	var spawn_node = position_spawn[position_index]
+	if not spawn_node or not is_instance_valid(spawn_node):
+		return true
 
-# Obtener una posición libre aleatoria
+	return spawn_node.get_child_count() > 0
+
 func get_free_spawn_position() -> int:
 	var free_positions: Array[int] = []
 	
@@ -206,6 +202,19 @@ func get_free_spawn_position() -> int:
 		return -1
 	
 	return free_positions[randi() % free_positions.size()]
+
+# --- DETECCIÓN DE COLISIONES CON AREA3D ---
+
+func _on_area_body_entered(body, spawned_obj: Node3D):
+	if body == target_vehicle:
+		var iid = spawned_obj.get_instance_id()
+		_current_colliding[iid] = spawned_obj
+		print("[mainController] Vehículo colisionó con: %s (instance_id=%d)" % [spawned_obj.name, iid])
+
+func _on_area_body_exited(body, spawned_obj: Node3D):
+	if body == target_vehicle:
+		var iid = spawned_obj.get_instance_id()
+		_current_colliding.erase(iid)
 
 # Contar objetos activos spawneados
 func get_active_objects_count() -> int:
@@ -222,12 +231,12 @@ func clear_all_spawned_objects():
 # Función para limpiar posiciones ocupadas al iniciar
 func clear_spawn_positions_on_start():
 	for spawn_node in position_spawn:
-		for child in spawn_node.get_children():
-			child.queue_free()
+		if is_instance_valid(spawn_node):
+			for child in spawn_node.get_children():
+				child.queue_free()
 
 # === FUNCIONES DE TESTING Y DEBUG ===
 
-# Input para testing rápido
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		match event.keycode:
@@ -236,4 +245,4 @@ func _input(event):
 			KEY_2:
 				spawn_multiple_random(3)
 			KEY_3:
-				clear_all_spawned_objects()
+				clear_all_spawned_objects()	

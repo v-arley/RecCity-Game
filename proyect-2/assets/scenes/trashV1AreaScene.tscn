@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cpm7d60fpysnm"]
+[gd_scene load_steps=12 format=4 uid="uid://b4rng5n2pcdmy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1mj5"]
 resource_name = "green1Color"
@@ -147,7 +147,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g3i7l")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hlfoc"]
-size = Vector3(1.0161133, 0.53271484, 1)
+size = Vector3(4.003479, 0.09301758, 3.9992676)
 
 [node name="TrashV1S" type="Node3D"]
 
@@ -176,5 +176,5 @@ skeleton = NodePath("")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01928711, 0.25854492, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002105713, 0.03869629, 0.0040283203)
 shape = SubResource("BoxShape3D_hlfoc")

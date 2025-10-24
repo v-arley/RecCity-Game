@@ -1,0 +1,316 @@
+[gd_scene load_steps=9 format=3 uid="uid://el81eiqg4gjl"]
+
+[ext_resource type="Script" uid="uid://c24kjmk7hjok0" path="res://scripts/guiController.gd" id="1_4namk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wmex"]
+bg_color = Color(0.38430595, 0.5860826, 0.89985543, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_4namk"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4namk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j28qn"]
+bg_color = Color(0, 0.7121031, 0.46199483, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elgu3"]
+bg_color = Color(0.77375394, 0, 0.18630877, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7um6"]
+bg_color = Color(0.76542354, 0.5619323, 9.62615e-07, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8aab"]
+bg_color = Color(0.4700758, 0.47007585, 0.47007567, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4namk")
+
+[node name="MenuScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="LlbGame" type="Label" parent="MenuScreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.5
+offset_right = 35.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "RC-Game"
+
+[node name="BnStart" type="Button" parent="MenuScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -15.5
+offset_right = 28.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
+
+[node name="GameScreen" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="GameScreen"]
+offset_right = 88.0
+offset_bottom = 54.0
+
+[node name="LblLife" type="Label" parent="GameScreen/VBoxContainer1"]
+layout_mode = 2
+text = "Vehicle Life"
+
+[node name="LifeProgressBar" type="ProgressBar" parent="GameScreen/VBoxContainer1"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GameScreen"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="LblTime" type="Label" parent="GameScreen/VBoxContainer2"]
+layout_mode = 2
+text = "Time"
+
+[node name="Time" type="Label" parent="GameScreen/VBoxContainer2"]
+layout_mode = 2
+text = "00:00"
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="GameScreen"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1119.0
+offset_top = 210.0
+offset_right = -600.0
+offset_bottom = 287.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="GameScreen/HBoxContainer1"]
+layout_mode = 2
+
+[node name="LblPaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer1"]
+layout_mode = 2
+text = "PAPER"
+
+[node name="Panel" type="Panel" parent="GameScreen/HBoxContainer1/VBoxContainer1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_6wmex")
+
+[node name="LblCountValuePaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer1/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_4namk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="GameScreen/HBoxContainer1"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_4namk")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GameScreen/HBoxContainer1"]
+layout_mode = 2
+
+[node name="LblPaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer2"]
+layout_mode = 2
+text = "GLASS"
+
+[node name="Panel" type="Panel" parent="GameScreen/HBoxContainer1/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_j28qn")
+
+[node name="LblCountValueGlass" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_4namk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="GameScreen/HBoxContainer1"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_4namk")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="GameScreen/HBoxContainer1"]
+layout_mode = 2
+
+[node name="LblPaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer3"]
+layout_mode = 2
+text = "METAL"
+
+[node name="Panel" type="Panel" parent="GameScreen/HBoxContainer1/VBoxContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_elgu3")
+
+[node name="LblCountValueMetal" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_4namk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="GameScreen/HBoxContainer1"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_4namk")
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="GameScreen/HBoxContainer1"]
+layout_mode = 2
+
+[node name="LblPaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer4"]
+layout_mode = 2
+text = "PLASTIC"
+
+[node name="Panel" type="Panel" parent="GameScreen/HBoxContainer1/VBoxContainer4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_l7um6")
+
+[node name="LblCountValuePlastic" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer4/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_4namk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator4" type="VSeparator" parent="GameScreen/HBoxContainer1"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_4namk")
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="GameScreen/HBoxContainer1"]
+layout_mode = 2
+
+[node name="LblPaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer5"]
+layout_mode = 2
+text = "GENERAL"
+
+[node name="Panel" type="Panel" parent="GameScreen/HBoxContainer1/VBoxContainer5"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_t8aab")
+
+[node name="LblCountValueGeneral" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer5/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_4namk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="GameScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -244.0
+offset_right = 129.0
+offset_bottom = -204.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LblAlerts" type="Label" parent="GameScreen/VBoxContainer3"]
+layout_mode = 2
+text = "Press 'F1' to unload the container"
+
+[node name="CreditsScreen" type="CanvasLayer" parent="."]

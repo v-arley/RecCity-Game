@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://byse3jpmgnpkm"]
+[gd_scene load_steps=8 format=3 uid="uid://byse3jpmgnpkm"]
 
 [ext_resource type="Sky" uid="uid://ber2txbf74tf4" path="res://assets/skyBox/sky01.tres" id="1_8jaiy"]
 [ext_resource type="Script" path="res://scripts/mainController.gd" id="1_llb4w"]
 [ext_resource type="PackedScene" uid="uid://b5c4y6d0mil15" path="res://assets/scenes/cityScene.tscn" id="2_im3ye"]
+[ext_resource type="PackedScene" uid="uid://b4rng5n2pcdmy" path="res://assets/scenes/trashV1AreaScene.tscn" id="2_q43bj"]
 [ext_resource type="PackedScene" uid="uid://blx7sjvitg4rt" path="res://assets/scenes/VehicleScene.tscn" id="4_llb4w"]
-[ext_resource type="PackedScene" uid="uid://cpm7d60fpysnm" path="res://assets/scenes/trashV1Scene.tscn" id="7_igwmh"]
+[ext_resource type="PackedScene" uid="uid://el81eiqg4gjl" path="res://assets/scenes/GUIScene.tscn" id="6_h6nc3"]
 
 [sub_resource type="Environment" id="Environment_q43bj"]
 background_mode = 2
@@ -15,8 +16,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05163133, 0)
 script = ExtResource("1_llb4w")
 target_camera = NodePath("WorldEnvironment/Camera3D")
 target_vehicle = NodePath("Root2")
-position_spawn = [NodePath("spawn01"), NodePath("spawn02")]
-objects_model = Array[PackedScene]([ExtResource("7_igwmh")])
+position_spawn = [NodePath("Spawns Group/spawn01"), NodePath("Spawns Group/spawn02"), NodePath("Spawns Group/spawn03"), NodePath("Spawns Group/spawn04"), NodePath("Spawns Group/spawn05"), NodePath("Spawns Group/spawn06"), NodePath("Spawns Group/spawn07")]
+objects_model = Array[PackedScene]([ExtResource("2_q43bj")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_q43bj")
@@ -34,8 +35,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3100419, 0.20124245, 3.412
 [node name="Root2" parent="." instance=ExtResource("4_llb4w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9996899, 0.24671602, -3.668829)
 
-[node name="spawn01" type="Node3D" parent="."]
+[node name="Spawns Group" type="Node3D" parent="."]
+
+[node name="spawn01" type="Node3D" parent="Spawns Group"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3638954, 0.3986181, -0.62708086)
 
-[node name="spawn02" type="Node3D" parent="."]
+[node name="spawn02" type="Node3D" parent="Spawns Group"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5107167, 0.399, 7.0226374)
+
+[node name="spawn03" type="Node3D" parent="Spawns Group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5107167, 0.399, -17.75507)
+
+[node name="spawn04" type="Node3D" parent="Spawns Group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.222258, 0.399, -17.75507)
+
+[node name="spawn05" type="Node3D" parent="Spawns Group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.222258, 0.399, 24.763702)
+
+[node name="spawn06" type="Node3D" parent="Spawns Group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4926224, 0.399, 51.318024)
+
+[node name="spawn07" type="Node3D" parent="Spawns Group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.400328, 0.399, 32.438637)
+
+[node name="Control" parent="." instance=ExtResource("6_h6nc3")]
