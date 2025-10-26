@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://blx7sjvitg4rt"]
+[gd_scene load_steps=20 format=4 uid="uid://blx7sjvitg4rt"]
 
 [ext_resource type="Script" uid="uid://jcg0f4qekh2r" path="res://scripts/vehicleController.gd" id="1_fgqtk"]
 [ext_resource type="Texture2D" uid="uid://cwsuk2wbkijem" path="res://assets/models/vehicles/vehicle01_colormap.png" id="1_qxir0"]
@@ -250,7 +250,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_phoh1")
 
-[node name="VehicleBody3D" type="VehicleBody3D" node_paths=PackedStringArray("front_left_wheel", "front_right_wheel", "rear_left_wheel", "rear_right_wheel")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cvynh"]
+size = Vector3(1.5970993, 1.4050903, 3.458496)
+
+[node name="VehicleBody3D" type="VehicleBody3D" node_paths=PackedStringArray("front_left_wheel", "front_right_wheel", "rear_left_wheel", "rear_right_wheel", "bumper_area")]
 mass = 1200.0
 script = ExtResource("1_fgqtk")
 front_left_wheel = NodePath("VehicleWheel3DI")
@@ -259,6 +262,7 @@ rear_left_wheel = NodePath("VehicleWheel3TI")
 rear_right_wheel = NodePath("VehicleWheel3TD")
 engine_force_strength = 2380.0
 brake_force_strength = 30.0
+bumper_area = NodePath("Area3D")
 
 [node name="VehicleWheel3DD" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44871223, 0.29982874, 1.1098903)
@@ -324,3 +328,9 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016201496, 1.275, -0.1331191)
 mesh = SubResource("ArrayMesh_1d5em")
 skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015220642, 0.89834595, 0.026855469)
+shape = SubResource("BoxShape3D_cvynh")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8j7acteq7lb2"]
+
+[ext_resource type="PackedScene" uid="uid://d3sv4c4sndnyx" path="res://assets/models/enviroment/Dumpster04Y.glb" id="1_62356"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vgqxm"]
+radius = 6.037487
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x3rpm"]
+size = Vector3(2.3372803, 2.050293, 1.258728)
+
+[sub_resource type="SphereMesh" id="SphereMesh_62356"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3rpm"]
+transparency = 1
+albedo_color = Color(0, 0.5686275, 0.57254905, 0.09803922)
+emission_enabled = true
+emission_energy_multiplier = 0.02
+
+[node name="ContainerPaper" type="Node3D"]
+
+[node name="DeliveryArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeliveryArea"]
+shape = SubResource("SphereShape3D_vgqxm")
+
+[node name="Dumpster04Y" parent="." instance=ExtResource("1_62356")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Dumpster04Y"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dumpster04Y/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119018555, 0.9875489, 0.0033226013)
+shape = SubResource("BoxShape3D_x3rpm")
+
+[node name="Highlight" type="MeshInstance3D" parent="."]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 0)
+visible = false
+mesh = SubResource("SphereMesh_62356")
+surface_material_override/0 = SubResource("StandardMaterial3D_x3rpm")

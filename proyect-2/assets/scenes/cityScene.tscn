@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b5c4y6d0mil15"]
+[gd_scene load_steps=41 format=3 uid="uid://b5c4y6d0mil15"]
 
 [ext_resource type="PackedScene" uid="uid://bc0bjlf0m0ytc" path="res://assets/models/buildings/Building01.glb" id="3_8vnom"]
 [ext_resource type="PackedScene" uid="uid://v1hyn0j44iy8" path="res://assets/models/buildings/Building02.glb" id="4_v3aic"]
@@ -15,11 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://26hs1ir350kf" path="res://assets/models/buildings/Building13.glb" id="14_v7lyx"]
 [ext_resource type="PackedScene" uid="uid://djsqsg3oh3o8o" path="res://assets/models/buildings/Building14.glb" id="15_p0ku1"]
 [ext_resource type="Material" uid="uid://dteog32ud28rn" path="res://assets/materials/greyColor.tres" id="15_v7lyx"]
-[ext_resource type="PackedScene" uid="uid://becujycirbgbm" path="res://assets/models/enviroment/Dumpster01S.glb" id="16_gdngg"]
-[ext_resource type="PackedScene" uid="uid://cirss7xjplxim" path="res://assets/models/enviroment/Dumpster02R.glb" id="17_atipe"]
-[ext_resource type="PackedScene" uid="uid://cduv1ftr4iitw" path="res://assets/models/enviroment/Dumpster03V.glb" id="18_7nkqe"]
-[ext_resource type="PackedScene" uid="uid://d3sv4c4sndnyx" path="res://assets/models/enviroment/Dumpster04Y.glb" id="19_j1rlb"]
-[ext_resource type="PackedScene" uid="uid://brhxype3kvfhi" path="res://assets/models/enviroment/Dumpster05G.glb" id="20_j5q41"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p0ku1"]
 
@@ -91,9 +86,6 @@ size = Vector3(5.9153557, 3.7479248, 7.420038)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_otle2"]
 size = Vector3(5.893896, 2.487915, 7.420059)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mkjyc"]
-size = Vector3(2.3372803, 2.050293, 1.258728)
 
 [node name="Root" type="Node3D"]
 
@@ -861,51 +853,3 @@ shape = SubResource("BoxShape3D_u7rye")
 
 [node name="Building14" parent="Block16/Building4" instance=ExtResource("15_p0ku1")]
 transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
-
-[node name="Dumpsters" type="Node3D" parent="."]
-transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 21.121462, 0.020171642, 36.798286)
-
-[node name="Dumpster01S" parent="Dumpsters" instance=ExtResource("16_gdngg")]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, -9.171379, 0, 0.030548096)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Dumpsters/Dumpster01S"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Dumpsters/Dumpster01S/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119018555, 0.9875489, 0.0033226013)
-shape = SubResource("BoxShape3D_mkjyc")
-
-[node name="Dumpster02R" parent="Dumpsters" instance=ExtResource("17_atipe")]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, -16.403511, 0, 0.008293152)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Dumpsters/Dumpster02R"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Dumpsters/Dumpster02R/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119018555, 0.9875489, 0.0033226013)
-shape = SubResource("BoxShape3D_mkjyc")
-
-[node name="Dumpster03V" parent="Dumpsters" instance=ExtResource("18_7nkqe")]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, -1.8542099, 0, 0.022453308)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Dumpsters/Dumpster03V"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Dumpsters/Dumpster03V/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119018555, 0.9875489, 0.0033226013)
-shape = SubResource("BoxShape3D_mkjyc")
-
-[node name="Dumpster04Y" parent="Dumpsters" instance=ExtResource("19_j1rlb")]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 6.0207825, 0, 0.024223328)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Dumpsters/Dumpster04Y"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Dumpsters/Dumpster04Y/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119018555, 0.9875489, 0.0033226013)
-shape = SubResource("BoxShape3D_mkjyc")
-
-[node name="Dumpster05G" parent="Dumpsters" instance=ExtResource("20_j5q41")]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 13.437233, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Dumpsters/Dumpster05G"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Dumpsters/Dumpster05G/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119018555, 0.9875489, 0.0033226013)
-shape = SubResource("BoxShape3D_mkjyc")
