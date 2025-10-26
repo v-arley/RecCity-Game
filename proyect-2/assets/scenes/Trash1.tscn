@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cpm7d60fpysnm"]
+[gd_scene load_steps=12 format=4 uid="uid://b4rng5n2pcdmy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1mj5"]
 resource_name = "green1Color"
@@ -146,10 +146,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g3i7l")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hlfoc"]
-size = Vector3(1.0161133, 0.53271484, 1)
+[sub_resource type="SphereShape3D" id="SphereShape3D_udtwx"]
+radius = 1.1966846
 
-[node name="TrashV1S" type="Node3D"]
+[node name="Trash" type="Node3D"]
 
 [node name="Cylinder010" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.026456982, 0, 0, 0, 0.026456982, 0, 0, 0, 0.026456982, 0.14469072, 0.07793593, 0.52692187)
@@ -176,5 +176,5 @@ skeleton = NodePath("")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01928711, 0.25854492, 0)
-shape = SubResource("BoxShape3D_hlfoc")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002105713, 0.03869629, 0.0040283203)
+shape = SubResource("SphereShape3D_udtwx")

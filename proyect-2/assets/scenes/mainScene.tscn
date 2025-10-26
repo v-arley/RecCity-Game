@@ -1,23 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://byse3jpmgnpkm"]
+[gd_scene load_steps=10 format=3 uid="uid://byse3jpmgnpkm"]
 
 [ext_resource type="Sky" uid="uid://ber2txbf74tf4" path="res://assets/skyBox/sky01.tres" id="1_8jaiy"]
 [ext_resource type="Script" path="res://scripts/mainController.gd" id="1_llb4w"]
 [ext_resource type="PackedScene" uid="uid://b5c4y6d0mil15" path="res://assets/scenes/cityScene.tscn" id="2_im3ye"]
-[ext_resource type="PackedScene" uid="uid://b4rng5n2pcdmy" path="res://assets/scenes/trashV1AreaScene.tscn" id="2_q43bj"]
+[ext_resource type="PackedScene" uid="uid://b4rng5n2pcdmy" path="res://assets/scenes/Trash1.tscn" id="2_q43bj"]
 [ext_resource type="PackedScene" uid="uid://blx7sjvitg4rt" path="res://assets/scenes/VehicleScene.tscn" id="4_llb4w"]
 [ext_resource type="PackedScene" uid="uid://el81eiqg4gjl" path="res://assets/scenes/GUIScene.tscn" id="6_h6nc3"]
+[ext_resource type="Script" uid="uid://dxc41d3abu7n4" path="res://scripts/SpawnerController.gd" id="6_igwmh"]
+[ext_resource type="PackedScene" uid="uid://dfeoqa7fn0vi1" path="res://assets/scenes/Trash2.tscn" id="8_c1ps1"]
 
 [sub_resource type="Environment" id="Environment_q43bj"]
 background_mode = 2
 sky = ExtResource("1_8jaiy")
 
-[node name="Root" type="Node3D" node_paths=PackedStringArray("target_camera", "target_vehicle", "position_spawn")]
+[node name="Root" type="Node3D" node_paths=PackedStringArray("target_camera", "target_vehicle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05163133, 0)
 script = ExtResource("1_llb4w")
 target_camera = NodePath("WorldEnvironment/Camera3D")
 target_vehicle = NodePath("Root2")
-position_spawn = [NodePath("Spawns Group/spawn01"), NodePath("Spawns Group/spawn02"), NodePath("Spawns Group/spawn03"), NodePath("Spawns Group/spawn04"), NodePath("Spawns Group/spawn05"), NodePath("Spawns Group/spawn06"), NodePath("Spawns Group/spawn07")]
-objects_model = Array[PackedScene]([ExtResource("2_q43bj")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_q43bj")
@@ -33,7 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.90630
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3100419, 0.20124245, 3.4123774)
 
 [node name="Root2" parent="." instance=ExtResource("4_llb4w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9996899, 0.24671602, -3.668829)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 21.420828, 0.24671602, 47.968697)
 
 [node name="Spawns Group" type="Node3D" parent="."]
 
@@ -58,4 +58,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4926224, 0.399, 51.318024)
 [node name="spawn07" type="Node3D" parent="Spawns Group"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.400328, 0.399, 32.438637)
 
+[node name="spawn08" type="Node3D" parent="Spawns Group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.738712, 0.798, -43.059032)
+
+[node name="spawn09" type="Node3D" parent="Spawns Group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.165585, 0.6411183, -18.289972)
+
+[node name="spawn10" type="Node3D" parent="Spawns Group"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.055216, 0.55014014, 24.870995)
+
 [node name="Control" parent="." instance=ExtResource("6_h6nc3")]
+
+[node name="SpawnerController" type="Node" parent="." node_paths=PackedStringArray("target_vehicle", "position_spawn")]
+script = ExtResource("6_igwmh")
+target_vehicle = NodePath("../Root2")
+position_spawn = [NodePath("../Spawns Group/spawn01"), NodePath("../Spawns Group/spawn02"), NodePath("../Spawns Group/spawn03"), NodePath("../Spawns Group/spawn04"), NodePath("../Spawns Group/spawn05"), NodePath("../Spawns Group/spawn06"), NodePath("../Spawns Group/spawn07"), NodePath("../Spawns Group/spawn08"), NodePath("../Spawns Group/spawn09"), NodePath("../Spawns Group/spawn10")]
+objects_model = Array[PackedScene]([ExtResource("2_q43bj"), ExtResource("8_c1ps1")])
