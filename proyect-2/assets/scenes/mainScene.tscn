@@ -3,11 +3,11 @@
 [ext_resource type="Sky" uid="uid://ber2txbf74tf4" path="res://assets/skyBox/sky01.tres" id="1_8jaiy"]
 [ext_resource type="Script" path="res://scripts/mainController.gd" id="1_llb4w"]
 [ext_resource type="PackedScene" uid="uid://b5c4y6d0mil15" path="res://assets/scenes/cityScene.tscn" id="2_im3ye"]
-[ext_resource type="PackedScene" uid="uid://b4rng5n2pcdmy" path="res://assets/scenes/Trash1.tscn" id="2_q43bj"]
+[ext_resource type="PackedScene" uid="uid://b4rng5n2pcdmy" path="res://assets/scenes/TrashGlass.tscn" id="2_q43bj"]
 [ext_resource type="PackedScene" uid="uid://blx7sjvitg4rt" path="res://assets/scenes/VehicleScene.tscn" id="4_llb4w"]
 [ext_resource type="PackedScene" uid="uid://el81eiqg4gjl" path="res://assets/scenes/GUIScene.tscn" id="6_h6nc3"]
 [ext_resource type="Script" uid="uid://dxc41d3abu7n4" path="res://scripts/SpawnerController.gd" id="6_igwmh"]
-[ext_resource type="PackedScene" uid="uid://dfeoqa7fn0vi1" path="res://assets/scenes/Trash2.tscn" id="8_c1ps1"]
+[ext_resource type="PackedScene" uid="uid://dfeoqa7fn0vi1" path="res://assets/scenes/TrashPaper.tscn" id="8_c1ps1"]
 
 [sub_resource type="Environment" id="Environment_q43bj"]
 background_mode = 2
@@ -28,6 +28,7 @@ fov = 60.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0, 12.915024, 49.888462)
+light_color = Color(0.9266403, 0.65541285, 0, 1)
 
 [node name="Root" parent="." instance=ExtResource("2_im3ye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3100419, 0.20124245, 3.4123774)

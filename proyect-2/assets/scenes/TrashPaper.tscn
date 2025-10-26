@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfeoqa7fn0vi1"]
 
-[ext_resource type="PackedScene" uid="uid://ct2royhpisejf" path="res://assets/models/enviroment/trashP1.glb" id="1_epabs"]
+[ext_resource type="PackedScene" uid="uid://ct2royhpisejf" path="res://assets/models/enviroment/TrashPaper.glb" id="1_epabs"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_udtwx"]
 radius = 1.1966846
 
 [node name="Trash" type="Node3D"]
 
+[node name="trash" parent="." instance=ExtResource("1_epabs")]
+
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002105713, 0.03869629, 0.0040283203)
 shape = SubResource("SphereShape3D_udtwx")
-
-[node name="trash" parent="." instance=ExtResource("1_epabs")]

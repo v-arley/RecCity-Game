@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bld7pwf0vioab"
-path="res://.godot/imported/trashV1.glb-91932a4ebe6f7a2230e298d25b312a78.scn"
+uid="uid://5b4xbqq3kqqx"
+path="res://.godot/imported/VehicleType05.glb-c52c222c1920e69691c14542879d54d4.scn"
 
 [deps]
 
-source_file="res://assets/models/enviroment/trashV1.glb"
-dest_files=["res://.godot/imported/trashV1.glb-91932a4ebe6f7a2230e298d25b312a78.scn"]
+source_file="res://assets/models/vehicles/VehicleType05.glb"
+dest_files=["res://.godot/imported/VehicleType05.glb-c52c222c1920e69691c14542879d54d4.scn"]
 
 [params]
 

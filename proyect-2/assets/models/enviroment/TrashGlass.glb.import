@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ddhwydfmo6h00"
-path="res://.godot/imported/TrashOriginal.glb-7d3da6499168ad22baa5a8854bd919a6.scn"
+uid="uid://bld7pwf0vioab"
+path="res://.godot/imported/TrashGlass.glb-4fcf34018c573bb7bfce28d863572498.scn"
 
 [deps]
 
-source_file="res://assets/models/enviroment/TrashOriginal.glb"
-dest_files=["res://.godot/imported/TrashOriginal.glb-7d3da6499168ad22baa5a8854bd919a6.scn"]
+source_file="res://assets/models/enviroment/TrashGlass.glb"
+dest_files=["res://.godot/imported/TrashGlass.glb-4fcf34018c573bb7bfce28d863572498.scn"]
 
 [params]
 
