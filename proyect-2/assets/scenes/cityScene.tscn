@@ -1,6 +1,7 @@
-[gd_scene load_steps=41 format=3 uid="uid://b5c4y6d0mil15"]
+[gd_scene load_steps=44 format=3 uid="uid://b5c4y6d0mil15"]
 
 [ext_resource type="PackedScene" uid="uid://bc0bjlf0m0ytc" path="res://assets/models/buildings/Building01.glb" id="3_8vnom"]
+[ext_resource type="PackedScene" uid="uid://tbpal3oqb6hq" path="res://assets/models/Fence01.glb" id="3_p0ku1"]
 [ext_resource type="PackedScene" uid="uid://v1hyn0j44iy8" path="res://assets/models/buildings/Building02.glb" id="4_v3aic"]
 [ext_resource type="PackedScene" uid="uid://b5ct2uxrsg64l" path="res://assets/models/buildings/Building03.glb" id="5_2xmuq"]
 [ext_resource type="PackedScene" uid="uid://10ntmigwbu41" path="res://assets/models/buildings/Building04.glb" id="6_v74re"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://26hs1ir350kf" path="res://assets/models/buildings/Building13.glb" id="14_v7lyx"]
 [ext_resource type="PackedScene" uid="uid://djsqsg3oh3o8o" path="res://assets/models/buildings/Building14.glb" id="15_p0ku1"]
 [ext_resource type="Material" uid="uid://dteog32ud28rn" path="res://assets/materials/greyColor.tres" id="15_v7lyx"]
+[ext_resource type="Material" uid="uid://fit3vskafwmn" path="res://assets/materials/new_standard_material_3d.tres" id="17_uog0c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p0ku1"]
 
@@ -86,6 +88,8 @@ size = Vector3(5.9153557, 3.7479248, 7.420038)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_otle2"]
 size = Vector3(5.893896, 2.487915, 7.420059)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ieqf8"]
 
 [node name="Root" type="Node3D"]
 
@@ -200,6 +204,12 @@ transform = Transform3D(105, 0, 0, 0, 0.106, 0, 0, 0, 5.25, 0.00046975713, -0.00
 material_override = ExtResource("14_8hifi")
 mesh = SubResource("BoxMesh_lsvta")
 skeleton = NodePath("../..")
+
+[node name="Fence01" parent="Road" instance=ExtResource("3_p0ku1")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0.19910724, 0.041510954, 52.294323)
+
+[node name="Fence02" parent="Road" instance=ExtResource("3_p0ku1")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 7.5564218, 0.041510954, 52.294323)
 
 [node name="Block1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.644127, 0, -37.830143)
@@ -853,3 +863,8 @@ shape = SubResource("BoxShape3D_u7rye")
 
 [node name="Building14" parent="Block16/Building4" instance=ExtResource("15_p0ku1")]
 transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5163622, 0, 0, 0, 1.361732, 0, 0, 0, 0.04378867, 0, 0.7635968, 0)
+material_override = ExtResource("17_uog0c")
+mesh = SubResource("BoxMesh_ieqf8")

@@ -96,7 +96,10 @@ func _physics_process(delta: float) -> void:
 func _on_bumper_body_entered(body: Node):
 	# Puedes filtrar lo que NO debe hacer daño (ej.: basura recolectable)
 	# if body.is_in_group("collectibles"): return
-	
+	# print("[Vehicle] body_entered:", body)
+	if body == self:
+		return
+		
 	if _cooldown_left > 0.0:
 		return  # evita múltiples daños por el mismo contacto breve
 	

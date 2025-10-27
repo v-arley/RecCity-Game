@@ -1,0 +1,8 @@
+[gd_resource type="ORMMaterial3D" load_steps=2 format=3 uid="uid://b28vnv0nhjev8"]
+
+[ext_resource type="Texture2D" uid="uid://bi5mbaqrf4paf" path="res://assets/textures/WoodFloor039_1K-PNG_NormalDX.png" id="1_mn42h"]
+
+[resource]
+normal_enabled = true
+normal_texture = ExtResource("1_mn42h")
+ao_on_uv2 = true
