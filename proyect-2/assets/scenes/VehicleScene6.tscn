@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjmb8jto30h7r"]
+
+[ext_resource type="PackedScene" uid="uid://5b4xbqq3kqqx" path="res://assets/models/vehicles/VehicleType05.glb" id="1_lcaun"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fgqtk"]
+size = Vector3(1.5036163, 1.3409691, 2.7573438)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cvynh"]
+size = Vector3(1.5033398, 1.1567154, 2.766014)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="VehicleBody3D" type="VehicleBody3D" parent="."]
+collision_layer = 4
+collision_mask = 3
+mass = 1200.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0033035278, 0.6820507, -0.020865679)
+shape = SubResource("BoxShape3D_fgqtk")
+
+[node name="Hitbox" type="Area3D" parent="VehicleBody3D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D/Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0030698776, 0.7741585, -0.020931244)
+shape = SubResource("BoxShape3D_cvynh")
+
+[node name="VehicleType05" parent="VehicleBody3D" instance=ExtResource("1_lcaun")]

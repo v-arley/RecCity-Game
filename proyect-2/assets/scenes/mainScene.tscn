@@ -81,7 +81,7 @@ light_color = Color(0.9266403, 0.65541285, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3596444, 0.099313736, 3.5282202)
 
 [node name="Root2" parent="." instance=ExtResource("4_llb4w")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 25.926073, 0.24671602, 48.84409)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 24.986633, 0.24671602, 49.813213)
 
 [node name="Spawns Group" type="Node3D" parent="."]
 

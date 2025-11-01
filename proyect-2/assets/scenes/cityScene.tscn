@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b5c4y6d0mil15"]
+[gd_scene load_steps=52 format=3 uid="uid://b5c4y6d0mil15"]
 
 [ext_resource type="PackedScene" uid="uid://bc0bjlf0m0ytc" path="res://assets/models/buildings/Building01.glb" id="3_8vnom"]
 [ext_resource type="PackedScene" uid="uid://tbpal3oqb6hq" path="res://assets/models/Fence01.glb" id="3_p0ku1"]
@@ -16,7 +16,13 @@
 [ext_resource type="PackedScene" uid="uid://26hs1ir350kf" path="res://assets/models/buildings/Building13.glb" id="14_v7lyx"]
 [ext_resource type="PackedScene" uid="uid://djsqsg3oh3o8o" path="res://assets/models/buildings/Building14.glb" id="15_p0ku1"]
 [ext_resource type="Material" uid="uid://dteog32ud28rn" path="res://assets/materials/greyColor.tres" id="15_v7lyx"]
-[ext_resource type="Material" uid="uid://fit3vskafwmn" path="res://assets/materials/new_standard_material_3d.tres" id="17_uog0c"]
+[ext_resource type="PackedScene" uid="uid://cg255pwr5h4gf" path="res://assets/scenes/VehicleScene2.tscn" id="17_ieqf8"]
+[ext_resource type="Script" uid="uid://bwrye4ryo404q" path="res://scripts/TrafficController.gd" id="17_tuo4n"]
+[ext_resource type="PackedScene" uid="uid://ssdg4crcbdw2" path="res://assets/scenes/VehicleScene4.tscn" id="19_7nkqe"]
+[ext_resource type="PackedScene" uid="uid://c22iuq0rw2f2r" path="res://assets/scenes/VehicleScene3.tscn" id="19_tuo4n"]
+[ext_resource type="PackedScene" uid="uid://bpie20e2lc1sq" path="res://assets/scenes/VehicleScene5.tscn" id="20_j1rlb"]
+[ext_resource type="PackedScene" uid="uid://cjmb8jto30h7r" path="res://assets/scenes/VehicleScene6.tscn" id="21_j5q41"]
+[ext_resource type="PackedScene" uid="uid://c2qqqtrh5sv8u" path="res://assets/scenes/VehicleScene7.tscn" id="22_ix6cp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p0ku1"]
 
@@ -89,7 +95,31 @@ size = Vector3(5.9153557, 3.7479248, 7.420038)
 [sub_resource type="BoxShape3D" id="BoxShape3D_otle2"]
 size = Vector3(5.893896, 2.487915, 7.420059)
 
-[sub_resource type="BoxMesh" id="BoxMesh_ieqf8"]
+[sub_resource type="Curve3D" id="Curve3D_p0ku1"]
+closed = true
+bake_interval = 2.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.028514862, 0, -0.048095703, 0, 0, 0, 0, 0, 0, 100.02424, 0, -0.07476044, 0, 0, 0, 0, 0, 0, 100.01809, 0, 99.87771, 0, 0, 0, 0, 0, 0, 0.09685516, 0, 99.62536, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve3D" id="Curve3D_j1rlb"]
+closed = true
+bake_interval = 2.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -24.86245, 0, -24.991104, 0, 0, 0, 0, 0, 0, 25.05431, 0, -24.868156, 0, 0, 0, 0, 0, 0, 24.81451, 0, 24.567097, 0, 0, 0, 0, 0, 0, -25.250362, 0, 24.794666),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_j5q41"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -50.44876, 0, -24.9877, 0, 0, 0, 0, 0, 0, 49.52407, 0, -24.626251, 0, 0, 0, 0, 0, 0, 49.810883, 0, -0.53397447, 0, 0, 0, 0, 0, 0, -50.10617, 0, -0.17135364, 0, 0, 0, 0, 0, 0, -50.17579, 0, 25.382187, 0, 0, 0, 0, 0, 0, 49.921886, 0, 25.23878, 0, 0, 0, 0, 0, 0, 49.82428, 0, -0.31912422, 0, 0, 0, 0, 0, 0, -50.078545, 0, -0.094278164),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
 
 [node name="Root" type="Node3D"]
 
@@ -864,7 +894,44 @@ shape = SubResource("BoxShape3D_u7rye")
 [node name="Building14" parent="Block16/Building4" instance=ExtResource("15_p0ku1")]
 transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.5163622, 0, 0, 0, 1.361732, 0, 0, 0, 0.04378867, 0, 0.7635968, 0)
-material_override = ExtResource("17_uog0c")
-mesh = SubResource("BoxMesh_ieqf8")
+[node name="Circuits" type="Node3D" parent="."]
+
+[node name="Track" type="Path3D" parent="Circuits"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.07874, 0, -49.925186)
+curve = SubResource("Curve3D_p0ku1")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Circuits/Track"]
+transform = Transform3D(-0.00026648238, 0, 0.9999029, 0, 1, 0, -0.9999029, 0, -0.00026648238, -0.028514862, 0, -0.048095703)
+use_model_front = true
+
+[node name="TrafficController" type="Node3D" parent="Circuits" node_paths=PackedStringArray("paths")]
+script = ExtResource("17_tuo4n")
+vehicle_scenes = Array[PackedScene]([ExtResource("17_ieqf8"), ExtResource("19_7nkqe"), ExtResource("20_j1rlb"), ExtResource("21_j5q41"), ExtResource("22_ix6cp"), ExtResource("19_tuo4n")])
+paths = [NodePath("../Track"), NodePath("../Track2"), NodePath("../Track3")]
+base_speed_forward_per_path = Array[float]([7.0, 5.0, 5.0])
+speed_var_forward_per_path = Array[float]([0.0, 0.0, 0.0])
+base_speed_reverse_per_path = Array[float]([6.0, 5.0, 5.0])
+speed_var_reverse_per_path = Array[float]([0.0, 0.0, 0.0])
+spacing_forward_per_path = Array[float]([50.0, 20.0, 40.0])
+spacing_reverse_per_path = Array[float]([50.0, 20.0, 40.0])
+bidirectional_per_path = Array[bool]([true, true, true])
+num_forward_per_path = Array[int]([6, 2, 2])
+num_reverse_per_path = Array[int]([6, 2, 2])
+num_forward = 5
+num_reverse = 5
+start_jitter_m = 0.0
+lane_offset_forward = 1.2999999999999998
+lane_offset_reverse = -1.2999999999999998
+
+[node name="Track2" type="Path3D" parent="Circuits"]
+curve = SubResource("Curve3D_j1rlb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Circuits/Track2"]
+transform = Transform3D(0.0024631436, 0, 0.99999696, 0, 1, 0, -0.99999696, 0, 0.0024631436, -24.86245, 0, -24.991104)
+use_model_front = true
+
+[node name="Track3" type="Path3D" parent="Circuits"]
+curve = SubResource("Curve3D_j5q41")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Circuits/Track3"]
+transform = Transform3D(-0.003615199, 0, -0.9999336, 0, 1, 0, 0.9999336, 0, -0.003615199, -50.44876, 0, -24.9877)
