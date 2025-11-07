@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c1gihpwic7vyx"]
+
+[ext_resource type="Texture2D" uid="uid://cv4b5affv3n8a" path="res://assets/materials/sparse_grass_diff_1k.png" id="1_vgjhr"]
+[ext_resource type="Texture2D" uid="uid://dw5sqvlf0y2tv" path="res://assets/materials/sparse_grass_nor_dx_1k.png" id="2_gjj3c"]
+
+[resource]
+albedo_color = Color(0.40716958, 0.8878719, 0.85746074, 1)
+albedo_texture = ExtResource("1_vgjhr")
+metallic_specular = 0.0
+roughness = 0.0
+normal_enabled = true
+normal_scale = 2.67
+normal_texture = ExtResource("2_gjj3c")
+uv1_scale = Vector3(0.415, 0.415, 0.415)
+uv1_triplanar = true
+uv1_world_triplanar = true

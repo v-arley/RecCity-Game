@@ -95,8 +95,10 @@ transform = Transform3D(-0.99997604, 0.003963857, -0.0056824936, 0.0003002804, 0
 fov = 60.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0, 12.915024, 49.888462)
-light_color = Color(0.9266403, 0.65541285, 0, 1)
+transform = Transform3D(0.011468281, -0.9968085, 0.07900192, 0.14704883, 0.07982937, 0.98590267, -0.9890627, 0.0003105309, 0.1474951, -4.2824554, 12.915024, 4.985775)
+light_color = Color(0.62512875, 0.6334646, 0.6152509, 1)
+light_energy = 3.833
+shadow_enabled = true
 
 [node name="Root" parent="." instance=ExtResource("2_im3ye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3596444, 0.099313736, 3.5282202)
