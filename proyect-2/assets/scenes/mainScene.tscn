@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://byse3jpmgnpkm"]
+[gd_scene load_steps=48 format=3 uid="uid://byse3jpmgnpkm"]
 
 [ext_resource type="Sky" uid="uid://ber2txbf74tf4" path="res://assets/skyBox/sky01.tres" id="1_8jaiy"]
 [ext_resource type="Script" path="res://scripts/mainController.gd" id="1_llb4w"]
@@ -18,20 +18,31 @@
 [ext_resource type="PackedScene" uid="uid://c8j7acteq7lb2" path="res://assets/scenes/ContainerPlastic.tscn" id="16_yst4h"]
 [ext_resource type="PackedScene" uid="uid://c15iusmi8pm2a" path="res://assets/scenes/ContainerGeneral.tscn" id="17_reuav"]
 [ext_resource type="Script" uid="uid://cldi82tvatrqy" path="res://scripts/GameController.gd" id="18_siqd4"]
+[ext_resource type="Texture2D" uid="uid://uy2ps4206ry3" path="res://assets/textures/UIresource/pane01.png" id="19_cpnhh"]
+[ext_resource type="Texture2D" uid="uid://c0kt31g1lrx18" path="res://assets/textures/UIresource/background01.png" id="19_shhps"]
+[ext_resource type="Texture2D" uid="uid://dm4xvdvunp38v" path="res://assets/textures/UIresource/Normal/startButton.png" id="20_reuav"]
+[ext_resource type="Texture2D" uid="uid://drd7evyd5vm71" path="res://assets/textures/UIresource/Imagen6.png" id="20_v8har"]
+[ext_resource type="Texture2D" uid="uid://c4vvhs0iednep" path="res://assets/textures/UIresource/Imagen7.png" id="21_321os"]
+[ext_resource type="Texture2D" uid="uid://dljpppsxpnwgm" path="res://assets/textures/UIresource/Hover/startButton.png" id="21_ulo7l"]
+[ext_resource type="Texture2D" uid="uid://bfvid58svrymh" path="res://assets/textures/UIresource/Normal/exitButton.png" id="23_7wfw4"]
+[ext_resource type="Texture2D" uid="uid://u17cm2mrgsj5" path="res://assets/textures/UIresource/titleGame.png" id="23_mkpx1"]
+[ext_resource type="Texture2D" uid="uid://cveehytty27f" path="res://assets/textures/UIresource/Hover/exitButton.png" id="24_v8har"]
+[ext_resource type="Texture2D" uid="uid://ca5pvby4c5cbl" path="res://assets/textures/UIresource/25f83bf5-80c0-4a0f-9fe7-3a52e44702bf.png" id="25_321os"]
+[ext_resource type="Texture2D" uid="uid://je0xmfamkauo" path="res://assets/textures/UIresource/settings-icon-gear-3d-render-png.png" id="29_hw001"]
+[ext_resource type="FontFile" uid="uid://b3l5iw714fi6b" path="res://assets/fonts/JUmble.ttf" id="29_shhps"]
+[ext_resource type="FontFile" uid="uid://3k4g0f8kcfvy" path="res://assets/fonts/COOPBL.TTF" id="30_2b60k"]
+[ext_resource type="Texture2D" uid="uid://cyxdj3jxnyhtn" path="res://assets/textures/UIresource/Normal/continue01.png" id="30_p6xkl"]
+[ext_resource type="Texture2D" uid="uid://diq5kgcyw7tgw" path="res://assets/textures/UIresource/Normal/restart01.png" id="30_tk0bn"]
+[ext_resource type="Texture2D" uid="uid://c0rqkmgpymlhh" path="res://assets/textures/UIresource/Hover/restart01.png" id="31_kmnt2"]
+[ext_resource type="Texture2D" uid="uid://bp62g0gdbcb71" path="res://assets/textures/UIresource/Hover/continue01.png" id="31_wsth5"]
+[ext_resource type="Texture2D" uid="uid://dfthdyksijlbk" path="res://assets/textures/UIresource/Normal/menu01.png" id="32_5vlvd"]
+[ext_resource type="Texture2D" uid="uid://c160bikf6tcyr" path="res://assets/textures/UIresource/Hover/menu01.png" id="33_o5jev"]
+[ext_resource type="Texture2D" uid="uid://c7yv3pfs2xlwf" path="res://assets/textures/UIresource/Normal/exit01.png" id="34_p6xkl"]
+[ext_resource type="Texture2D" uid="uid://cuvq457qu4si4" path="res://assets/textures/UIresource/Hover/exit01.png" id="35_wsth5"]
 
 [sub_resource type="Environment" id="Environment_q43bj"]
 background_mode = 2
 sky = ExtResource("1_8jaiy")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gey70"]
-bg_color = Color(0.38430595, 0.5860826, 0.89985543, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-
-[sub_resource type="LabelSettings" id="LabelSettings_yst4h"]
-font_size = 24
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reuav"]
 
@@ -40,6 +51,10 @@ bg_color = Color(0, 0.7121031, 0.46199483, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_yst4h"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkpx1"]
 bg_color = Color(0.77375394, 0, 0.18630877, 1)
@@ -53,8 +68,14 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpnhh"]
-bg_color = Color(0.4700758, 0.47007585, 0.47007567, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2b60k"]
+bg_color = Color(0.41981313, 0.41981313, 0.41981304, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw001"]
+bg_color = Color(0.09567315, 0.37292972, 0.61671126, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -133,15 +154,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.291783, 0.2, -29.282442)
 [node name="spawn16" type="Node3D" parent="Spawns Group"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.570393, 0.2, -32.455894)
 
-[node name="Control" parent="." node_paths=PackedStringArray("lbl_count_paper", "lbl_count_glass", "lbl_count_metal", "lbl_count_plastic", "lbl_count_general", "lbl_corrects", "lbl_incorrects") instance=ExtResource("6_h6nc3")]
-lbl_count_paper = NodePath("../GameScreen/HBoxContainer1/VBoxContainer1/Panel/LblCountValuePaper")
-lbl_count_glass = NodePath("../GameScreen/HBoxContainer1/VBoxContainer2/Panel/LblCountValueGlass")
-lbl_count_metal = NodePath("../GameScreen/HBoxContainer1/VBoxContainer3/Panel/LblCountValueMetal")
-lbl_count_plastic = NodePath("../GameScreen/HBoxContainer1/VBoxContainer4/Panel/LblCountValuePlastic")
-lbl_count_general = NodePath("../GameScreen/HBoxContainer1/VBoxContainer5/Panel/LblCountValueGeneral")
-lbl_corrects = NodePath("../GameScreen/VBoxContainer4/LblCorrects")
-lbl_incorrects = NodePath("../GameScreen/VBoxContainer4/LblIncorrects")
-
 [node name="SpawnerController" type="Node" parent="." node_paths=PackedStringArray("target_vehicle", "position_spawn")]
 script = ExtResource("6_igwmh")
 target_vehicle = NodePath("../Root2")
@@ -175,20 +187,38 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.8
 [node name="ContainerGeneral" parent="Containers" instance=ExtResource("17_reuav")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.888817, 0, -26.721958)
 
-[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("vehicle", "menu_screen", "game_screen", "game_over_screen", "lbl_timer", "btn_start", "prg_health")]
+[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("vehicle", "menu_screen", "game_screen", "game_over_screen", "lbl_timer", "btn_start", "btn_exit1", "btn_exit2", "btn_settings", "btn_continue", "btn_restart1", "btn_restart2", "btn_menu1", "btn_menu2", "pause_screen", "prg_health")]
 script = ExtResource("18_siqd4")
 vehicle = NodePath("../Root2")
 menu_screen = NodePath("../MenuScreen")
 game_screen = NodePath("../GameScreen")
 game_over_screen = NodePath("../GameOverScreen")
 lbl_timer = NodePath("../GameScreen/VBoxContainer2/Time")
-btn_start = NodePath("../MenuScreen/BtnStart")
+btn_start = NodePath("../MenuScreen/VBoxContainer5/BtnStart2")
+btn_exit1 = NodePath("../MenuScreen/VBoxContainer6/BtnExit1")
+btn_exit2 = NodePath("../GameOverScreen/VBoxContainer3/game_over_exit")
+btn_settings = NodePath("../GameScreen/VBoxContainer/TextureButton")
+btn_continue = NodePath("../PauseScreen/VBoxContainer3/pause_continue")
+btn_restart1 = NodePath("../GameOverScreen/VBoxContainer/game_over_restart")
+btn_restart2 = NodePath("../PauseScreen/VBoxContainer/pause_restart")
+btn_menu1 = NodePath("../GameOverScreen/VBoxContainer2/game_over_menu")
+btn_menu2 = NodePath("../PauseScreen/VBoxContainer2/pause_menu")
+pause_screen = NodePath("../PauseScreen")
 prg_health = NodePath("../GameScreen/VBoxContainer1/LifeProgressBar")
 
+[node name="Control" parent="." node_paths=PackedStringArray("lbl_count_paper", "lbl_count_glass", "lbl_count_metal", "lbl_count_plastic", "lbl_count_general", "lbl_corrects", "lbl_incorrects") instance=ExtResource("6_h6nc3")]
+lbl_count_paper = NodePath("../GameScreen/HBoxContainer1/VBoxContainer6/Panel/LblCountValuePaper")
+lbl_count_glass = NodePath("../GameScreen/HBoxContainer1/VBoxContainer2/Panel/LblCountValueGlass")
+lbl_count_metal = NodePath("../GameScreen/HBoxContainer1/VBoxContainer3/Panel/LblCountValueMetal")
+lbl_count_plastic = NodePath("../GameScreen/HBoxContainer1/VBoxContainer4/Panel/LblCountValuePlastic")
+lbl_count_general = NodePath("../GameScreen/HBoxContainer1/VBoxContainer5/Panel/LblCountValueGeneral")
+lbl_corrects = NodePath("../GameScreen/VBoxContainer4/LblCorrects")
+lbl_incorrects = NodePath("../GameScreen/VBoxContainer4/LblIncorrects")
+
 [node name="MenuScreen" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="LlbGame" type="Label" parent="MenuScreen"]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -198,56 +228,183 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "RC-Game"
 
-[node name="BtnStart" type="Button" parent="MenuScreen"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Background" type="TextureRect" parent="MenuScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("19_shhps")
+expand_mode = 5
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MenuScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -28.0
-offset_top = -15.5
-offset_right = 28.0
-offset_bottom = 15.5
+offset_left = -428.0
+offset_top = -128.0
+offset_right = 1614.0
+offset_bottom = 1353.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "START"
+scale = Vector2(0.335, 0.25)
 
-[node name="GameOverScreen" type="CanvasLayer" parent="."]
-visible = false
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("19_cpnhh")
 
-[node name="LlbGame" type="Label" parent="GameOverScreen"]
-anchors_preset = 5
+[node name="VBoxContainer4" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -35.5
-offset_right = 35.5
-offset_bottom = 23.0
+anchor_bottom = 0.5
+offset_left = 46.99994
+offset_top = -215.0
+offset_right = 1702.0
+offset_bottom = 1719.0
 grow_horizontal = 2
-text = "RC-Game"
+grow_vertical = 2
+scale = Vector2(0.275, 0.275)
 
-[node name="LblGameOver" type="Label" parent="GameOverScreen"]
-anchors_preset = 5
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/VBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("20_v8har")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -35.0
-offset_top = 272.0
-offset_right = 36.0
-offset_bottom = 295.0
+anchor_bottom = 0.5
+offset_left = 202.99994
+offset_top = 49.00003
+offset_right = 939.0
+offset_bottom = 605.0
 grow_horizontal = 2
-text = "Game Over"
+grow_vertical = 2
+scale = Vector2(0.445, 0.445)
+
+[node name="Icon02" type="TextureRect" parent="MenuScreen/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("25_321os")
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = -39.0
+offset_right = 796.0
+offset_bottom = 309.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.37, 0.37)
+
+[node name="BtnStart2" type="TextureButton" parent="MenuScreen/VBoxContainer5"]
+layout_mode = 2
+texture_normal = ExtResource("20_reuav")
+texture_hover = ExtResource("21_ulo7l")
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 71.00003
+offset_right = 865.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.37, 0.37)
+
+[node name="BtnExit1" type="TextureButton" parent="MenuScreen/VBoxContainer6"]
+layout_mode = 2
+texture_normal = ExtResource("23_7wfw4")
+texture_hover = ExtResource("24_v8har")
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -504.0
+offset_top = -334.0
+offset_right = 3166.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.255, 0.255)
+
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/VBoxContainer7"]
+layout_mode = 2
+texture = ExtResource("21_321os")
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -409.0
+offset_top = -308.0
+offset_right = 1417.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.415, 0.415)
+
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/VBoxContainer8"]
+layout_mode = 2
+texture = ExtResource("23_mkpx1")
 
 [node name="GameScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameScreen"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.055, 0.055)
+
+[node name="TextureButton" type="TextureButton" parent="GameScreen/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("29_hw001")
 
 [node name="VBoxContainer1" type="VBoxContainer" parent="GameScreen"]
-offset_right = 88.0
-offset_bottom = 54.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_right = 67.5
+offset_bottom = 62.0
+grow_horizontal = 2
 
 [node name="LblLife" type="Label" parent="GameScreen/VBoxContainer1"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("29_shhps")
+theme_override_font_sizes/font_size = 24
 text = "Vehicle Life"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LifeProgressBar" type="ProgressBar" parent="GameScreen/VBoxContainer1"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("29_shhps")
+theme_override_font_sizes/font_size = 24
 value = 100.0
 fill_mode = 1
 
@@ -261,56 +418,70 @@ grow_horizontal = 0
 
 [node name="LblTime" type="Label" parent="GameScreen/VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("29_shhps")
+theme_override_font_sizes/font_size = 24
 text = "Time"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Time" type="Label" parent="GameScreen/VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("29_shhps")
+theme_override_font_sizes/font_size = 24
 text = "00:00"
 
-[node name="HBoxContainer1" type="HBoxContainer" parent="GameScreen"]
-anchors_preset = 6
+[node name="VBoxContainer4" type="VBoxContainer" parent="GameScreen"]
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -1119.0
-offset_top = 210.0
-offset_right = -600.0
-offset_bottom = 287.0
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_top = -50.0
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
 
-[node name="VBoxContainer1" type="VBoxContainer" parent="GameScreen/HBoxContainer1"]
+[node name="LblCorrects" type="Label" parent="GameScreen/VBoxContainer4"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("30_2b60k")
+theme_override_font_sizes/font_size = 32
+text = "Corrects: "
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LblPaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer1"]
+[node name="LblIncorrects" type="Label" parent="GameScreen/VBoxContainer4"]
 layout_mode = 2
-text = "PAPER"
+theme_override_fonts/font = ExtResource("30_2b60k")
+theme_override_font_sizes/font_size = 32
+text = "Incorrects:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="GameScreen/HBoxContainer1/VBoxContainer1"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_gey70")
-
-[node name="LblCountValuePaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer1/Panel"]
-layout_mode = 1
+[node name="VBoxContainer3" type="VBoxContainer" parent="GameScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -129.0
+offset_top = -244.0
+offset_right = 129.0
+offset_bottom = -204.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "0"
-label_settings = SubResource("LabelSettings_yst4h")
-horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="LblAlerts" type="Label" parent="GameScreen/VBoxContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="GameScreen"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -145.0
+offset_right = 564.0
+offset_bottom = -64.0
+grow_vertical = 0
+scale = Vector2(1.37, 1.37)
 
 [node name="VSeparator" type="VSeparator" parent="GameScreen/HBoxContainer1"]
 custom_minimum_size = Vector2(20, 0)
@@ -322,6 +493,8 @@ layout_mode = 2
 
 [node name="LblPaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("29_shhps")
+theme_override_font_sizes/font_size = 24
 text = "GLASS"
 
 [node name="Panel" type="Panel" parent="GameScreen/HBoxContainer1/VBoxContainer2"]
@@ -359,6 +532,8 @@ layout_mode = 2
 
 [node name="LblPaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer3"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("29_shhps")
+theme_override_font_sizes/font_size = 24
 text = "METAL"
 
 [node name="Panel" type="Panel" parent="GameScreen/HBoxContainer1/VBoxContainer3"]
@@ -396,6 +571,8 @@ layout_mode = 2
 
 [node name="LblPaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer4"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("29_shhps")
+theme_override_font_sizes/font_size = 24
 text = "PLASTIC"
 
 [node name="Panel" type="Panel" parent="GameScreen/HBoxContainer1/VBoxContainer4"]
@@ -433,6 +610,8 @@ layout_mode = 2
 
 [node name="LblPaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer5"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("29_shhps")
+theme_override_font_sizes/font_size = 24
 text = "GENERAL"
 
 [node name="Panel" type="Panel" parent="GameScreen/HBoxContainer1/VBoxContainer5"]
@@ -440,7 +619,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_cpnhh")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2b60k")
 
 [node name="LblCountValueGeneral" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer5/Panel"]
 layout_mode = 1
@@ -460,38 +639,190 @@ label_settings = SubResource("LabelSettings_yst4h")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="GameScreen"]
+[node name="VSeparator5" type="VSeparator" parent="GameScreen/HBoxContainer1"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_reuav")
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="GameScreen/HBoxContainer1"]
+layout_mode = 2
+
+[node name="LblPaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer6"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("29_shhps")
+theme_override_font_sizes/font_size = 24
+text = "PAPER"
+
+[node name="Panel" type="Panel" parent="GameScreen/HBoxContainer1/VBoxContainer6"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_hw001")
+
+[node name="LblCountValuePaper" type="Label" parent="GameScreen/HBoxContainer1/VBoxContainer6/Panel"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -129.0
-offset_top = -244.0
-offset_right = 129.0
-offset_bottom = -204.0
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_yst4h")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LblAlerts" type="Label" parent="GameScreen/VBoxContainer3"]
+[node name="PauseScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="PauseScreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -369.0
+offset_top = 55.0
+offset_right = 370.0
+offset_bottom = 231.0
+grow_horizontal = 2
+
+[node name="TitleGame" type="Label" parent="PauseScreen/VBoxContainer4"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("29_shhps")
+theme_override_font_sizes/font_size = 160
+text = "RC-Game"
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="GameScreen"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -156.0
-offset_top = 556.0
-offset_right = -73.0
-offset_bottom = 606.0
-grow_horizontal = 0
+[node name="VBoxContainer3" type="VBoxContainer" parent="PauseScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -101.0
+offset_right = 1237.0
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
 
-[node name="LblCorrects" type="Label" parent="GameScreen/VBoxContainer4"]
+[node name="pause_continue" type="TextureButton" parent="PauseScreen/VBoxContainer3"]
 layout_mode = 2
-text = "Corrects: "
-horizontal_alignment = 2
+texture_normal = ExtResource("30_p6xkl")
+texture_hover = ExtResource("31_wsth5")
 
-[node name="LblIncorrects" type="Label" parent="GameScreen/VBoxContainer4"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.40503
+offset_top = -36.795013
+offset_right = 1081.595
+offset_bottom = 315.2057
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
+
+[node name="pause_restart" type="TextureButton" parent="PauseScreen/VBoxContainer"]
 layout_mode = 2
-text = "Incorrects:"
-horizontal_alignment = 2
+texture_normal = ExtResource("30_tk0bn")
+texture_hover = ExtResource("31_kmnt2")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.85004
+offset_top = 27.235016
+offset_right = 1116.1499
+offset_bottom = 379.2356
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
+
+[node name="pause_menu" type="TextureButton" parent="PauseScreen/VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("32_5vlvd")
+texture_hover = ExtResource("33_o5jev")
+
+[node name="GameOverScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="LblGameOver" type="Label" parent="GameOverScreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -289.0
+offset_top = 63.0
+offset_right = 305.0
+offset_bottom = 201.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("29_shhps")
+theme_override_font_sizes/font_size = 125
+text = "You Lose!!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -524.0
+offset_top = 117.0
+offset_right = 715.0
+offset_bottom = 469.00073
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
+
+[node name="game_over_restart" type="TextureButton" parent="GameOverScreen/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("30_tk0bn")
+texture_hover = ExtResource("31_kmnt2")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GameOverScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -524.0
+offset_top = 181.03003
+offset_right = 715.0
+offset_bottom = 533.0306
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
+
+[node name="game_over_menu" type="TextureButton" parent="GameOverScreen/VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("32_5vlvd")
+texture_hover = ExtResource("33_o5jev")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="GameOverScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -524.0
+offset_top = 246.96497
+offset_right = 715.0
+offset_bottom = 598.9657
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
+
+[node name="game_over_exit" type="TextureButton" parent="GameOverScreen/VBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("34_p6xkl")
+texture_hover = ExtResource("35_wsth5")

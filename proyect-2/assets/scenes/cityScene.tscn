@@ -1,5 +1,6 @@
-[gd_scene load_steps=52 format=3 uid="uid://b5c4y6d0mil15"]
+[gd_scene load_steps=55 format=3 uid="uid://b5c4y6d0mil15"]
 
+[ext_resource type="Material" uid="uid://dfri3icvtbdxf" path="res://assets/materials/grass01.tres" id="1_ix6cp"]
 [ext_resource type="PackedScene" uid="uid://bc0bjlf0m0ytc" path="res://assets/models/buildings/Building01.glb" id="3_8vnom"]
 [ext_resource type="PackedScene" uid="uid://tbpal3oqb6hq" path="res://assets/models/Fence01.glb" id="3_p0ku1"]
 [ext_resource type="PackedScene" uid="uid://v1hyn0j44iy8" path="res://assets/models/buildings/Building02.glb" id="4_v3aic"]
@@ -15,7 +16,6 @@
 [ext_resource type="Material" uid="uid://bfsc5qdd08rsn" path="res://assets/materials/asphalColor.tres" id="14_8hifi"]
 [ext_resource type="PackedScene" uid="uid://26hs1ir350kf" path="res://assets/models/buildings/Building13.glb" id="14_v7lyx"]
 [ext_resource type="PackedScene" uid="uid://djsqsg3oh3o8o" path="res://assets/models/buildings/Building14.glb" id="15_p0ku1"]
-[ext_resource type="Material" uid="uid://dteog32ud28rn" path="res://assets/materials/greyColor.tres" id="15_v7lyx"]
 [ext_resource type="PackedScene" uid="uid://cg255pwr5h4gf" path="res://assets/scenes/VehicleScene2.tscn" id="17_ieqf8"]
 [ext_resource type="Script" uid="uid://bwrye4ryo404q" path="res://scripts/TrafficController.gd" id="17_tuo4n"]
 [ext_resource type="PackedScene" uid="uid://ssdg4crcbdw2" path="res://assets/scenes/VehicleScene4.tscn" id="19_7nkqe"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bpie20e2lc1sq" path="res://assets/scenes/VehicleScene5.tscn" id="20_j1rlb"]
 [ext_resource type="PackedScene" uid="uid://cjmb8jto30h7r" path="res://assets/scenes/VehicleScene6.tscn" id="21_j5q41"]
 [ext_resource type="PackedScene" uid="uid://c2qqqtrh5sv8u" path="res://assets/scenes/VehicleScene7.tscn" id="22_ix6cp"]
+[ext_resource type="Material" uid="uid://fit3vskafwmn" path="res://assets/materials/new_standard_material_3d.tres" id="24_j5q41"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p0ku1"]
 
@@ -121,11 +122,15 @@ _data = {
 }
 point_count = 8
 
+[sub_resource type="BoxMesh" id="BoxMesh_ix6cp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qo38g"]
+
 [node name="Root" type="Node3D"]
 
 [node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(98.63463, 0, 0, 0, 0.009863462, 0, 0, 0, 98.63463, 0, 0, 0)
-material_override = ExtResource("15_v7lyx")
+transform = Transform3D(300, 0, 0, 0, 0.01, 0, 0, 0, 300, 0, 0, 0)
+material_override = ExtResource("1_ix6cp")
 mesh = SubResource("BoxMesh_p0ku1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
@@ -901,7 +906,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.07874, 0, -49.925186)
 curve = SubResource("Curve3D_p0ku1")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Circuits/Track"]
-transform = Transform3D(-0.00026648238, 0, 0.9999029, 0, 1, 0, -0.9999029, 0, -0.00026648238, -0.028514862, 0, -0.048095703)
+transform = Transform3D(-0.00026648206, 0, 0.99990165, 0, 1, 0, -0.99990165, 0, -0.00026648206, -0.028514862, 0, -0.048095703)
 use_model_front = true
 
 [node name="TrafficController" type="Node3D" parent="Circuits" node_paths=PackedStringArray("paths")]
@@ -934,4 +939,17 @@ use_model_front = true
 curve = SubResource("Curve3D_j5q41")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Circuits/Track3"]
-transform = Transform3D(-0.003615199, 0, -0.9999336, 0, 1, 0, 0.9999336, 0, -0.003615199, -50.44876, 0, -24.9877)
+transform = Transform3D(-0.0036151942, 0, -0.99993235, 0, 1, 0, 0.99993235, 0, -0.0036151942, -50.44876, 0, -24.9877)
+
+[node name="WallsGroup" type="Node3D" parent="."]
+
+[node name="Wall01" type="MeshInstance3D" parent="WallsGroup"]
+transform = Transform3D(99.13306, 0, 0, 0, 2.024304, 0, 0, 0, 0.28999123, 0.43958592, 1.0806328, -52.586143)
+material_override = ExtResource("24_j5q41")
+mesh = SubResource("BoxMesh_ix6cp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(19.397802, 0, 0, 0, 0.04698218, 0, 0, 0, 0.17721795, 12.519963, 0.06910694, 47.238625)
+mesh = SubResource("BoxMesh_qo38g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]

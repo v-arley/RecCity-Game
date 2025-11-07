@@ -10,7 +10,19 @@ class_name GameController
 @export var game_screen: CanvasLayer
 @export var game_over_screen: CanvasLayer
 @export var lbl_timer: Label
-@export var btn_start: Button
+@export var btn_start: TextureButton
+
+# incorporaciones
+@export var btn_exit1: TextureButton  # <<-- Nuevo
+@export var btn_exit2: TextureButton  # <<-- Nuevo
+@export var btn_settings: TextureButton  # <<-- Nuevo
+@export var btn_continue: TextureButton  # <<-- Nuevo
+@export var btn_restart1: TextureButton  # <<-- Nuevo
+@export var btn_restart2: TextureButton  # <<-- Nuevo
+@export var btn_menu1: TextureButton  # <<-- Nuevo
+@export var btn_menu2: TextureButton  # <<-- Nuevo
+@export var pause_screen: CanvasLayer  # <<-- Nuevo
+
 @export var prg_health: ProgressBar        # <<-- NUEVO: barra de vida
 
 # ======================================================
@@ -31,6 +43,25 @@ func _ready():
 	
 	if btn_start:
 		btn_start.pressed.connect(_on_btn_start_pressed)
+		
+	if btn_exit1:  # <<-- Nuevo
+		btn_exit1.pressed.connect(_on_btn_exit_pressed)
+	if btn_exit2:  # <<-- Nuevo
+		btn_exit2.pressed.connect(_on_btn_exit_pressed)
+	
+	# incorporaciones
+	if btn_settings:  # <<-- Nuevo
+		btn_settings.pressed.connect(_on_btn_settings_pressed)
+	if btn_continue:  # <<-- Nuevo
+		btn_continue.pressed.connect(_on_btn_continue_pressed)
+	if btn_restart1:  # <<-- Nuevo
+		btn_restart1.pressed.connect(_on_btn_restart_pressed)
+	if btn_menu1:  # <<-- Nuevo
+		btn_menu1.pressed.connect(_on_btn_menu_pressed)
+	if btn_restart2:  # <<-- Nuevo
+		btn_restart2.pressed.connect(_on_btn_restart_pressed)
+	if btn_menu2:  # <<-- Nuevo
+		btn_menu2.pressed.connect(_on_btn_menu_pressed)
 	
 	if vehicle:
 		vehicle.vehicle_damaged.connect(_on_vehicle_damaged)
@@ -53,11 +84,36 @@ func _process(delta: float):
 
 func _on_btn_start_pressed():
 	_start_game()
+	
+func _on_btn_exit_pressed():  # <<-- Nuevo
+	get_tree().quit()
+
+func _on_btn_settings_pressed():  # <<-- Nuevo
+	pause_screen.visible = true
+	menu_screen.visible = false
+	game_over_screen.visible = false
+	game_screen.visible = false
+	
+func _on_btn_continue_pressed():  # <<-- Nuevo
+	pause_screen.visible = false
+	menu_screen.visible = false
+	game_over_screen.visible = false
+	game_screen.visible = true
+	
+func _on_btn_restart_pressed():  # <<-- Nuevo
+	_start_game()
+	
+func _on_btn_menu_pressed():  # <<-- Nuevo
+	pause_screen.visible = false
+	menu_screen.visible = true
+	game_over_screen.visible = false
+	game_screen.visible = false
 
 func _start_game():
 	game_running = true
 	remaining_time = float(start_time_minutes * 60)
 	
+	pause_screen.visible = false
 	menu_screen.visible = false
 	game_over_screen.visible = false
 	game_screen.visible = true
