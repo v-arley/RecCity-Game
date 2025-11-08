@@ -5,25 +5,34 @@ class_name GameController
 # === REFERENCIAS ======================================
 # ======================================================
 
-@export var vehicle: VehicleController     # <<-- Tipo actualizado
+@export var vehicle: VehicleController
+@export var hud: HUDController
+
 @export var menu_screen: CanvasLayer
 @export var game_screen: CanvasLayer
 @export var game_over_screen: CanvasLayer
+@export var pause_screen: CanvasLayer
+
 @export var lbl_timer: Label
+@export var prg_health: ProgressBar
 @export var btn_start: TextureButton
 
-# incorporaciones
-@export var btn_exit1: TextureButton  # <<-- Nuevo
-@export var btn_exit2: TextureButton  # <<-- Nuevo
-@export var btn_settings: TextureButton  # <<-- Nuevo
-@export var btn_continue: TextureButton  # <<-- Nuevo
-@export var btn_restart1: TextureButton  # <<-- Nuevo
-@export var btn_restart2: TextureButton  # <<-- Nuevo
-@export var btn_menu1: TextureButton  # <<-- Nuevo
-@export var btn_menu2: TextureButton  # <<-- Nuevo
-@export var pause_screen: CanvasLayer  # <<-- Nuevo
+# Botones
+@export var btn_exit1: TextureButton
+@export var btn_exit2: TextureButton
+@export var btn_settings: TextureButton
+@export var btn_continue: TextureButton
+@export var btn_restart1: TextureButton
+@export var btn_restart2: TextureButton
 
-@export var prg_health: ProgressBar        # <<-- NUEVO: barra de vida
+# Labels de Game Over
+@export var lbl_paper_count: Label
+@export var lbl_glass_count: Label
+@export var lbl_metal_count: Label
+@export var lbl_plastic_count: Label
+@export var lbl_general_count: Label
+@export var lbl_corrects_final: Label
+@export var lbl_incorrects_final: Label
 
 # ======================================================
 # === VARIABLES DE TIEMPO ==============================
@@ -41,28 +50,14 @@ func _ready():
 	_show_menu_screen()
 	_disable_vehicle_controls()
 	
-	if btn_start:
-		btn_start.pressed.connect(_on_btn_start_pressed)
-		
-	if btn_exit1:  # <<-- Nuevo
-		btn_exit1.pressed.connect(_on_btn_exit_pressed)
-	if btn_exit2:  # <<-- Nuevo
-		btn_exit2.pressed.connect(_on_btn_exit_pressed)
-	
-	# incorporaciones
-	if btn_settings:  # <<-- Nuevo
-		btn_settings.pressed.connect(_on_btn_settings_pressed)
-	if btn_continue:  # <<-- Nuevo
-		btn_continue.pressed.connect(_on_btn_continue_pressed)
-	if btn_restart1:  # <<-- Nuevo
-		btn_restart1.pressed.connect(_on_btn_restart_pressed)
-	if btn_menu1:  # <<-- Nuevo
-		btn_menu1.pressed.connect(_on_btn_menu_pressed)
-	if btn_restart2:  # <<-- Nuevo
-		btn_restart2.pressed.connect(_on_btn_restart_pressed)
-	if btn_menu2:  # <<-- Nuevo
-		btn_menu2.pressed.connect(_on_btn_menu_pressed)
-	
+	if btn_start:    btn_start.pressed.connect(_on_btn_start_pressed)
+	if btn_exit1:    btn_exit1.pressed.connect(_on_btn_exit_pressed)
+	if btn_exit2:    btn_exit2.pressed.connect(_on_btn_exit_pressed)
+	if btn_settings: btn_settings.pressed.connect(_on_btn_settings_pressed)
+	if btn_continue: btn_continue.pressed.connect(_on_btn_continue_pressed)
+	if btn_restart1: btn_restart1.pressed.connect(_on_btn_restart_pressed)
+	if btn_restart2: btn_restart2.pressed.connect(_on_btn_restart_pressed)
+
 	if vehicle:
 		vehicle.vehicle_damaged.connect(_on_vehicle_damaged)
 		vehicle.vehicle_destroyed.connect(_on_vehicle_destroyed)
@@ -70,8 +65,9 @@ func _ready():
 	if prg_health:
 		prg_health.value = 100
 
+
 func _process(delta: float):
-	if game_running:
+	if game_running and not get_tree().paused:
 		remaining_time -= delta
 		if remaining_time <= 0:
 			remaining_time = 0
@@ -84,32 +80,37 @@ func _process(delta: float):
 
 func _on_btn_start_pressed():
 	_start_game()
-	
-func _on_btn_exit_pressed():  # <<-- Nuevo
+
+func _on_btn_exit_pressed():
 	get_tree().quit()
 
-func _on_btn_settings_pressed():  # <<-- Nuevo
+func _on_btn_settings_pressed():
+	print("[Game] Juego en pausa.")
+	get_tree().paused = true
 	pause_screen.visible = true
 	menu_screen.visible = false
 	game_over_screen.visible = false
 	game_screen.visible = false
-	
-func _on_btn_continue_pressed():  # <<-- Nuevo
+	_disable_vehicle_controls()
+
+func _on_btn_continue_pressed():
+	print("[Game] Continuando partida.")
+	get_tree().paused = false
 	pause_screen.visible = false
 	menu_screen.visible = false
 	game_over_screen.visible = false
 	game_screen.visible = true
-	
-func _on_btn_restart_pressed():  # <<-- Nuevo
-	_start_game()
-	
-func _on_btn_menu_pressed():  # <<-- Nuevo
-	pause_screen.visible = false
-	menu_screen.visible = true
-	game_over_screen.visible = false
-	game_screen.visible = false
+	_enable_vehicle_controls()
+
+func _on_btn_restart_pressed():
+	restart_game()
+
+# ======================================================
+# === FUNCIONALIDAD PRINCIPAL ==========================
+# ======================================================
 
 func _start_game():
+	get_tree().paused = false
 	game_running = true
 	remaining_time = float(start_time_minutes * 60)
 	
@@ -130,6 +131,35 @@ func _end_game():
 	_disable_vehicle_controls()
 	game_screen.visible = false
 	game_over_screen.visible = true
+	
+	refresh_game_over_stats()  # Actualiza los valores finales antes de pausar
+	
+	await get_tree().process_frame
+	get_tree().paused = true
+
+# ======================================================
+# === REFRESCAR ESTADÍSTICAS DEL GAME OVER =============
+# ======================================================
+
+func refresh_game_over_stats():
+	if not hud:
+		return
+	lbl_paper_count.text = str(hud.counts["Paper"])
+	lbl_glass_count.text = str(hud.counts["Glass"])
+	lbl_metal_count.text = str(hud.counts["Metal"])
+	lbl_plastic_count.text = str(hud.counts["Plastic"])
+	lbl_general_count.text = str(hud.counts["General"])
+	lbl_corrects_final.text = "Corrects: %d" % hud.total_corrects
+	lbl_incorrects_final.text = "Incorrects: %d" % hud.total_incorrects
+
+# ======================================================
+# === REINICIO GLOBAL DEL JUEGO ========================
+# ======================================================
+
+func restart_game():
+	print("[Game] Reiniciando partida...")
+	get_tree().paused = false
+	get_tree().reload_current_scene()
 
 # ======================================================
 # === MANEJO DE VIDA ===================================
@@ -162,9 +192,11 @@ func _disable_vehicle_controls():
 # ======================================================
 
 func _show_menu_screen():
+	get_tree().paused = false
 	menu_screen.visible = true
 	game_screen.visible = false
 	game_over_screen.visible = false
+	pause_screen.visible = false
 	_update_timer_label()
 
 # ======================================================

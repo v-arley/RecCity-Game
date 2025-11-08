@@ -12,6 +12,8 @@ class_name SpawnerController  # <<--- importante para poder tiparlo desde otros 
 @export var max_active_objects: int = 10
 @export var auto_spawn_on_start: bool = true
 @export var initial_spawn_count: int = 10
+@export var hud: HUDController  
+
 
 # ======================================================
 # === VARIABLES INTERNAS ===============================
@@ -161,6 +163,13 @@ func _on_area_body_entered(body, spawned_obj: Node3D):
 			spawned_objects_list.erase(spawned_obj)
 			
 			print("[Recolección] Camión recogió:", trash_type)
+			# Guardar datos de la basura recogida
+			carrying_trash = true
+			carried_trash_type = trash_type
+
+			# 🔸 Notificar al HUD qué tipo se lleva
+			if hud:
+				hud.highlight_trash(carried_trash_type)
 
 			# Mantener siempre el máximo si quieres:
 			if get_active_objects_count() < max_active_objects:
@@ -186,6 +195,9 @@ func get_carried_trash_type() -> String:
 func clear_trash():
 	carrying_trash = false
 	carried_trash_type = ""
+	if hud:
+		hud.highlight_trash("")  # 🔹 quitar resaltado
+
 
 # Entrega y limpia, devuelve el tipo entregado ("" si no llevaba nada)
 func deliver_trash() -> String:
