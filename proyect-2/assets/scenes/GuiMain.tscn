@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c44fjvyee4dgy"]
+[gd_scene load_steps=34 format=3 uid="uid://c44fjvyee4dgy"]
 
 [ext_resource type="Script" uid="uid://bx47seug65a1w" path="res://assets/scenes/gui_main.gd" id="1_71rmo"]
 [ext_resource type="Texture2D" uid="uid://c0kt31g1lrx18" path="res://assets/textures/UIresource/background01.png" id="1_l7mpo"]
@@ -8,10 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://dm4xvdvunp38v" path="res://assets/textures/UIresource/Normal/startButton.png" id="5_yly7f"]
 [ext_resource type="Texture2D" uid="uid://dljpppsxpnwgm" path="res://assets/textures/UIresource/Hover/startButton.png" id="6_4r8k5"]
 [ext_resource type="Texture2D" uid="uid://bfvid58svrymh" path="res://assets/textures/UIresource/Normal/exitButton.png" id="7_lk0w4"]
+[ext_resource type="Texture2D" uid="uid://oyqp60gujtwa" path="res://assets/textures/UIresource/Normal/creditsButton.png" id="8_4r8k5"]
 [ext_resource type="Texture2D" uid="uid://cveehytty27f" path="res://assets/textures/UIresource/Hover/exitButton.png" id="8_g7b3t"]
+[ext_resource type="Texture2D" uid="uid://rlejbgr3l6rn" path="res://assets/textures/UIresource/Hover/creditsButtonHover.png" id="9_lk0w4"]
 [ext_resource type="Texture2D" uid="uid://c4vvhs0iednep" path="res://assets/textures/UIresource/Imagen7.png" id="9_necx5"]
 [ext_resource type="Texture2D" uid="uid://u17cm2mrgsj5" path="res://assets/textures/UIresource/titleGame.png" id="10_ec7tm"]
+[ext_resource type="Texture2D" uid="uid://c23rpyfhdatni" path="res://assets/textures/UIresource/Normal/instructionButton.png" id="10_g7b3t"]
 [ext_resource type="Texture2D" uid="uid://je0xmfamkauo" path="res://assets/textures/UIresource/settings-icon-gear-3d-render-png.png" id="11_2wvjp"]
+[ext_resource type="Texture2D" uid="uid://dt86x2kfcwlj6" path="res://assets/textures/UIresource/Hover/instructionButtonHover.png" id="11_necx5"]
 [ext_resource type="FontFile" uid="uid://b3l5iw714fi6b" path="res://assets/fonts/JUmble.ttf" id="12_edv6h"]
 [ext_resource type="FontFile" uid="uid://3k4g0f8kcfvy" path="res://assets/fonts/COOPBL.TTF" id="13_dpw2m"]
 [ext_resource type="Texture2D" uid="uid://cyxdj3jxnyhtn" path="res://assets/textures/UIresource/Normal/continue01.png" id="14_2fnqh"]
@@ -59,7 +63,7 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 
-[node name="UI" type="Control" node_paths=PackedStringArray("button_start", "button_exit", "button_settings", "button_menu", "button_continue", "button_restart", "label_glass_count", "label_metal_count", "label_plastic_count", "label_general_count", "label_paper_count", "label_correct_count", "label_incorrect_count", "progressBar_Life", "MenuScreen", "GameScreen", "PauseScreen", "GameOverScreen")]
+[node name="UI" type="Control" node_paths=PackedStringArray("button_start", "button_exit", "button_settings", "button_menu", "button_credits", "button_continue", "button_instructions", "button_restart", "label_glass_count", "label_metal_count", "label_plastic_count", "label_general_count", "label_paper_count", "label_correct_count", "label_incorrect_count", "progressBar_Life", "MenuScreen", "GameScreen", "PauseScreen", "GameOverScreen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,11 +71,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_71rmo")
-button_start = NodePath("MenuScreen/VBoxContainer5/button_start")
-button_exit = NodePath("MenuScreen/VBoxContainer6/button_exit")
+button_start = NodePath("MenuScreen/BtnStart/button_start")
+button_exit = NodePath("MenuScreen/BtnExit/button_exit")
 button_settings = NodePath("GameScreen/VBoxContainer/button_settings")
 button_menu = NodePath("PauseScreen/VBoxContainer2/button_menu")
+button_credits = NodePath("MenuScreen/BtnCredits/button_credits")
 button_continue = NodePath("PauseScreen/VBoxContainer3/button_continue")
+button_instructions = NodePath("MenuScreen/BtnInstructions/button_instrictions")
 button_restart = NodePath("PauseScreen/VBoxContainer/button_restart")
 label_glass_count = NodePath("GameScreen/HBoxContainer1/VBoxContainer2/Panel/label_glass_count")
 label_metal_count = NodePath("GameScreen/HBoxContainer1/VBoxContainer3/Panel/label_metal_count")
@@ -113,7 +119,7 @@ size_flags_vertical = 3
 texture = ExtResource("1_l7mpo")
 expand_mode = 5
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MenuScreen"]
+[node name="ButtonsBackground" type="VBoxContainer" parent="MenuScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -125,9 +131,9 @@ offset_right = 1614.0
 offset_bottom = 1353.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.335, 0.25)
+scale = Vector2(0.335, 0.29000062)
 
-[node name="TextureRect" type="TextureRect" parent="MenuScreen/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/ButtonsBackground"]
 layout_mode = 2
 texture = ExtResource("2_71rmo")
 
@@ -149,7 +155,7 @@ scale = Vector2(0.275, 0.275)
 layout_mode = 2
 texture = ExtResource("3_5n7sr")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MenuScreen"]
+[node name="ReciclyingIcon" type="VBoxContainer" parent="MenuScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -163,51 +169,90 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.445, 0.445)
 
-[node name="Icon02" type="TextureRect" parent="MenuScreen/VBoxContainer2"]
+[node name="Icon02" type="TextureRect" parent="MenuScreen/ReciclyingIcon"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("4_8335j")
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="MenuScreen"]
+[node name="BtnStart" type="VBoxContainer" parent="MenuScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -269.0
-offset_top = -39.0
-offset_right = 796.0
-offset_bottom = 309.0
+offset_left = -430.0
+offset_top = -104.0
+offset_right = 635.0
+offset_bottom = 244.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.37, 0.37)
+scale = Vector2(0.26253122, 0.28999513)
 
-[node name="button_start" type="TextureButton" parent="MenuScreen/VBoxContainer5"]
+[node name="button_start" type="TextureButton" parent="MenuScreen/BtnStart"]
 layout_mode = 2
 texture_normal = ExtResource("5_yly7f")
 texture_hover = ExtResource("6_4r8k5")
 
-[node name="VBoxContainer6" type="VBoxContainer" parent="MenuScreen"]
+[node name="BtnCredits" type="VBoxContainer" parent="MenuScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = 71.00003
-offset_right = 865.0
-offset_bottom = 416.0
+offset_left = -424.0
+offset_top = -1.5
+offset_right = 641.0
+offset_bottom = 349.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.37, 0.37)
+scale = Vector2(0.26253122, 0.28999513)
 
-[node name="button_exit" type="TextureButton" parent="MenuScreen/VBoxContainer6"]
+[node name="button_credits" type="TextureButton" parent="MenuScreen/BtnCredits"]
+layout_mode = 2
+texture_normal = ExtResource("8_4r8k5")
+texture_hover = ExtResource("9_lk0w4")
+
+[node name="BtnInstructions" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.0
+offset_top = 94.0
+offset_right = 1334.0
+offset_bottom = 454.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.26253122, 0.28999513)
+
+[node name="button_instrictions" type="TextureButton" parent="MenuScreen/BtnInstructions"]
+layout_mode = 2
+texture_normal = ExtResource("10_g7b3t")
+texture_hover = ExtResource("11_necx5")
+metadata/_edit_group_ = true
+
+[node name="BtnExit" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.0
+offset_top = 196.0
+offset_right = 650.0
+offset_bottom = 541.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.26253122, 0.28999513)
+
+[node name="button_exit" type="TextureButton" parent="MenuScreen/BtnExit"]
 layout_mode = 2
 texture_normal = ExtResource("7_lk0w4")
 texture_hover = ExtResource("8_g7b3t")
 
-[node name="VBoxContainer7" type="VBoxContainer" parent="MenuScreen"]
+[node name="GameNameBanner" type="VBoxContainer" parent="MenuScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -221,11 +266,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.255, 0.255)
 
-[node name="TextureRect" type="TextureRect" parent="MenuScreen/VBoxContainer7"]
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/GameNameBanner"]
 layout_mode = 2
 texture = ExtResource("9_necx5")
 
-[node name="VBoxContainer8" type="VBoxContainer" parent="MenuScreen"]
+[node name="GameName" type="VBoxContainer" parent="MenuScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -239,7 +284,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.415, 0.415)
 
-[node name="TextureRect" type="TextureRect" parent="MenuScreen/VBoxContainer8"]
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/GameName"]
 layout_mode = 2
 texture = ExtResource("10_ec7tm")
 

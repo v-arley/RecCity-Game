@@ -12,6 +12,7 @@ class_name GameController
 @export var game_screen: CanvasLayer
 @export var game_over_screen: CanvasLayer
 @export var pause_screen: CanvasLayer
+@export var instruction_screen: CanvasLayer
 
 @export var lbl_timer: Label
 @export var prg_health: ProgressBar
@@ -24,6 +25,10 @@ class_name GameController
 @export var btn_continue: TextureButton
 @export var btn_restart1: TextureButton
 @export var btn_restart2: TextureButton
+@export var btn_credits: TextureButton
+@export var btn_instructions1: TextureButton
+@export var btn_instructions2: TextureButton
+@export var btn_exitInstructions: TextureButton
 
 # Labels de Game Over
 @export var lbl_paper_count: Label
@@ -57,6 +62,11 @@ func _ready():
 	if btn_continue: btn_continue.pressed.connect(_on_btn_continue_pressed)
 	if btn_restart1: btn_restart1.pressed.connect(_on_btn_restart_pressed)
 	if btn_restart2: btn_restart2.pressed.connect(_on_btn_restart_pressed)
+	if btn_credits: btn_credits.pressed.connect(_on_btn_credits_pressed)
+	if btn_instructions1: btn_instructions1.pressed.connect(_on_btn_instructions_pressed)
+	if btn_instructions2: btn_instructions2.pressed.connect(_on_btn_instructions_pressed)
+	if btn_exitInstructions: btn_exitInstructions.pressed.connect(_on_btn_exit_instructions_pressed)
+	
 
 	if vehicle:
 		vehicle.vehicle_damaged.connect(_on_vehicle_damaged)
@@ -104,6 +114,25 @@ func _on_btn_continue_pressed():
 
 func _on_btn_restart_pressed():
 	restart_game()
+	
+func _on_btn_credits_pressed():
+	print("esto es una prueba de que se presionaron los creditos")
+	
+func _on_btn_instructions_pressed ():
+	print("Esto es una prueba de que se presiono el boton de instrucciones")
+	if game_running: 
+		pause_screen.visible = false
+	else:
+		menu_screen.visible = false
+	instruction_screen.visible = true
+	
+func _on_btn_exit_instructions_pressed():
+	instruction_screen.visible = false
+	if game_running:
+		pause_screen.visible = true
+	else:
+		menu_screen.visible = true
+	
 
 # ======================================================
 # === FUNCIONALIDAD PRINCIPAL ==========================

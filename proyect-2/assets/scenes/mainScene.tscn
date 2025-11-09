@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://byse3jpmgnpkm"]
+[gd_scene load_steps=51 format=3 uid="uid://byse3jpmgnpkm"]
 
 [ext_resource type="Sky" uid="uid://ber2txbf74tf4" path="res://assets/skyBox/sky01.tres" id="1_8jaiy"]
 [ext_resource type="Script" path="res://scripts/mainController.gd" id="1_llb4w"]
@@ -28,6 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://u17cm2mrgsj5" path="res://assets/textures/UIresource/titleGame.png" id="23_mkpx1"]
 [ext_resource type="Texture2D" uid="uid://cveehytty27f" path="res://assets/textures/UIresource/Hover/exitButton.png" id="24_v8har"]
 [ext_resource type="Texture2D" uid="uid://ca5pvby4c5cbl" path="res://assets/textures/UIresource/25f83bf5-80c0-4a0f-9fe7-3a52e44702bf.png" id="25_321os"]
+[ext_resource type="Texture2D" uid="uid://oyqp60gujtwa" path="res://assets/textures/UIresource/Normal/creditsButton.png" id="25_tq00l"]
+[ext_resource type="Texture2D" uid="uid://rlejbgr3l6rn" path="res://assets/textures/UIresource/Hover/creditsButtonHover.png" id="26_8n1ii"]
+[ext_resource type="Texture2D" uid="uid://c23rpyfhdatni" path="res://assets/textures/UIresource/Normal/instructionButton.png" id="27_dyyht"]
+[ext_resource type="Texture2D" uid="uid://dt86x2kfcwlj6" path="res://assets/textures/UIresource/Hover/instructionButtonHover.png" id="28_wm0pj"]
 [ext_resource type="Texture2D" uid="uid://je0xmfamkauo" path="res://assets/textures/UIresource/settings-icon-gear-3d-render-png.png" id="29_hw001"]
 [ext_resource type="FontFile" uid="uid://b3l5iw714fi6b" path="res://assets/fonts/JUmble.ttf" id="29_shhps"]
 [ext_resource type="FontFile" uid="uid://3k4g0f8kcfvy" path="res://assets/fonts/COOPBL.TTF" id="30_2b60k"]
@@ -37,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://bp62g0gdbcb71" path="res://assets/textures/UIresource/Hover/continue01.png" id="31_wsth5"]
 [ext_resource type="Texture2D" uid="uid://c7yv3pfs2xlwf" path="res://assets/textures/UIresource/Normal/exit01.png" id="34_p6xkl"]
 [ext_resource type="Texture2D" uid="uid://cuvq457qu4si4" path="res://assets/textures/UIresource/Hover/exit01.png" id="35_wsth5"]
+[ext_resource type="Texture2D" uid="uid://drthsvl360kte" path="res://assets/textures/UIresource/Hover/instructionButtonHoverLeft.png" id="38_8n1ii"]
 
 [sub_resource type="Environment" id="Environment_q43bj"]
 background_mode = 2
@@ -189,7 +194,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.8
 [node name="ContainerGeneral" parent="Containers" instance=ExtResource("17_reuav")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.888817, 0, -26.721958)
 
-[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("vehicle", "hud", "menu_screen", "game_screen", "game_over_screen", "pause_screen", "lbl_timer", "prg_health", "btn_start", "btn_exit1", "btn_exit2", "btn_settings", "btn_continue", "btn_restart1", "btn_restart2", "lbl_paper_count", "lbl_glass_count", "lbl_metal_count", "lbl_plastic_count", "lbl_general_count", "lbl_corrects_final", "lbl_incorrects_final")]
+[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("vehicle", "hud", "menu_screen", "game_screen", "game_over_screen", "pause_screen", "instruction_screen", "lbl_timer", "prg_health", "btn_start", "btn_exit1", "btn_exit2", "btn_settings", "btn_continue", "btn_restart1", "btn_restart2", "btn_credits", "btn_instructions1", "btn_instructions2", "btn_exitInstructions", "lbl_paper_count", "lbl_glass_count", "lbl_metal_count", "lbl_plastic_count", "lbl_general_count", "lbl_corrects_final", "lbl_incorrects_final")]
 script = ExtResource("18_siqd4")
 vehicle = NodePath("../Root2")
 hud = NodePath("../Control")
@@ -197,15 +202,20 @@ menu_screen = NodePath("../MenuScreen")
 game_screen = NodePath("../GameScreen")
 game_over_screen = NodePath("../GameOverScreen")
 pause_screen = NodePath("../PauseScreen")
+instruction_screen = NodePath("../InstructionScreen")
 lbl_timer = NodePath("../GameScreen/VBoxContainer2/Time")
 prg_health = NodePath("../GameScreen/VBoxContainer1/LifeProgressBar")
-btn_start = NodePath("../MenuScreen/VBoxContainer5/BtnStart2")
-btn_exit1 = NodePath("../MenuScreen/VBoxContainer6/BtnExit1")
+btn_start = NodePath("../MenuScreen/ButtonStart/BtnStart2")
+btn_exit1 = NodePath("../MenuScreen/ButtonExit/BtnExit1")
 btn_exit2 = NodePath("../GameOverScreen/VBoxContainer3/game_over_exit")
 btn_settings = NodePath("../GameScreen/VBoxContainer/SettingsButton")
-btn_continue = NodePath("../PauseScreen/VBoxContainer3/pause_continue")
-btn_restart1 = NodePath("../PauseScreen/VBoxContainer/pause_restart")
+btn_continue = NodePath("../PauseScreen/BtnContinue/pause_continue")
+btn_restart1 = NodePath("../PauseScreen/BtnRestart/pause_restart")
 btn_restart2 = NodePath("../GameOverScreen/VBoxContainer/game_over_restart")
+btn_credits = NodePath("../MenuScreen/ButtonCredits/BtnCredits")
+btn_instructions1 = NodePath("../MenuScreen/ButtonInstructions/BtnInstructions")
+btn_instructions2 = NodePath("../PauseScreen/BtnInstructions/pause_instructions")
+btn_exitInstructions = NodePath("../InstructionScreen/BtnExit/pause_exit")
 lbl_paper_count = NodePath("../GameOverScreen/VBoxContainer7/Panel/LblCountValuePaper")
 lbl_glass_count = NodePath("../GameOverScreen/VBoxContainer2/Panel/LblCountValueGlass")
 lbl_metal_count = NodePath("../GameOverScreen/VBoxContainer4/Panel/LblCountValueMetal")
@@ -313,40 +323,78 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("25_321os")
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="MenuScreen"]
+[node name="ButtonStart" type="VBoxContainer" parent="MenuScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -269.0
-offset_top = -39.0
-offset_right = 796.0
-offset_bottom = 309.0
+offset_left = -422.0
+offset_top = -124.0
+offset_right = 643.0
+offset_bottom = 224.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.37, 0.37)
+scale = Vector2(0.29000154, 0.25)
 
-[node name="BtnStart2" type="TextureButton" parent="MenuScreen/VBoxContainer5"]
+[node name="BtnStart2" type="TextureButton" parent="MenuScreen/ButtonStart"]
 layout_mode = 2
 texture_normal = ExtResource("20_reuav")
 texture_hover = ExtResource("21_ulo7l")
 
-[node name="VBoxContainer6" type="VBoxContainer" parent="MenuScreen"]
+[node name="ButtonCredits" type="VBoxContainer" parent="MenuScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = 71.00003
-offset_right = 865.0
-offset_bottom = 416.0
+offset_left = -430.0
+offset_top = -43.0
+offset_right = 635.0
+offset_bottom = 308.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.37, 0.37)
+scale = Vector2(0.29000154, 0.25)
 
-[node name="BtnExit1" type="TextureButton" parent="MenuScreen/VBoxContainer6"]
+[node name="BtnCredits" type="TextureButton" parent="MenuScreen/ButtonCredits"]
+layout_mode = 2
+texture_normal = ExtResource("25_tq00l")
+texture_hover = ExtResource("26_8n1ii")
+
+[node name="ButtonInstructions" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.0
+offset_top = 48.0
+offset_right = 1332.0
+offset_bottom = 408.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.29000154, 0.25)
+
+[node name="BtnInstructions" type="TextureButton" parent="MenuScreen/ButtonInstructions"]
+layout_mode = 2
+texture_normal = ExtResource("27_dyyht")
+texture_hover = ExtResource("28_wm0pj")
+
+[node name="ButtonExit" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -423.0
+offset_top = 138.0
+offset_right = 642.0
+offset_bottom = 483.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.29000154, 0.25)
+
+[node name="BtnExit1" type="TextureButton" parent="MenuScreen/ButtonExit"]
 layout_mode = 2
 texture_normal = ExtResource("23_7wfw4")
 texture_hover = ExtResource("24_v8har")
@@ -386,6 +434,20 @@ scale = Vector2(0.415, 0.415)
 [node name="TextureRect" type="TextureRect" parent="MenuScreen/VBoxContainer8"]
 layout_mode = 2
 texture = ExtResource("23_mkpx1")
+
+[node name="BtnCredits" type="VBoxContainer" parent="MenuScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.85501
+offset_top = 24.825012
+offset_right = 836.145
+offset_bottom = 375.825
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.26253122, 0.28999513)
 
 [node name="GameScreen" type="CanvasLayer" parent="."]
 visible = false
@@ -714,7 +776,7 @@ theme_override_fonts/font = ExtResource("29_shhps")
 theme_override_font_sizes/font_size = 160
 text = "RC-Game"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="PauseScreen"]
+[node name="BtnContinue" type="VBoxContainer" parent="PauseScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -728,32 +790,140 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.22, 0.22)
 
-[node name="pause_continue" type="TextureButton" parent="PauseScreen/VBoxContainer3"]
+[node name="pause_continue" type="TextureButton" parent="PauseScreen/BtnContinue"]
 layout_mode = 2
 texture_normal = ExtResource("30_p6xkl")
 texture_hover = ExtResource("31_wsth5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen"]
+[node name="BtnInstructions" type="VBoxContainer" parent="PauseScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -157.40503
-offset_top = -36.795013
-offset_right = 1081.595
-offset_bottom = 315.2057
+offset_left = -135.0
+offset_top = -38.00003
+offset_right = 1618.0
+offset_bottom = 322.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.22, 0.22)
 
-[node name="pause_restart" type="TextureButton" parent="PauseScreen/VBoxContainer"]
+[node name="pause_instructions" type="TextureButton" parent="PauseScreen/BtnInstructions"]
+layout_mode = 2
+texture_normal = ExtResource("27_dyyht")
+texture_hover = ExtResource("38_8n1ii")
+
+[node name="BtnRestart" type="VBoxContainer" parent="PauseScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 27.0
+offset_right = 1064.0
+offset_bottom = 379.00073
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
+
+[node name="pause_restart" type="TextureButton" parent="PauseScreen/BtnRestart"]
 layout_mode = 2
 texture_normal = ExtResource("30_tk0bn")
 texture_hover = ExtResource("31_kmnt2")
 
+[node name="InstructionScreen" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="InstructionScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_shhps")
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="InstructionScreen/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InstructionScreen/TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[font_size=24][color=#000000][b]🎮 CONTROLS[/b][/color][/font_size]
+[indent][font_size=18]• [b][color=#E91E63]W[/color][/b] – Move forward
+• [b][color=#E91E63]S[/color][/b] – Move backward  
+• [b][color=#E91E63]A[/color][/b] – Turn left
+• [b][color=#E91E63]D[/color][/b] – Turn right
+• [b][color=#9C27B0]Spacebar[/color][/b] – Brake / Emergency stop
+• [b][color=#9C27B0]E[/color][/b] – Collect trash
+• [b][color=#9C27B0]Mouse[/color][/b] – Look around (if enabled)[/font_size][/indent]
+
+[font_size=24][color=#000000][b]⚙️ OTHER ACTIONS[/b][/color][/font_size]
+[indent][font_size=18]• Tap the [b][color=#000000]gear icon (⚙️)[/color][/b] in the upper-left corner to pause the game
+• Press [b][color=#000000]ESC[/color][/b] to access pause menu
+• You can view these instructions from the [b][color=#000000]Pause Menu[/color][/b] or [b][color=#000000]Main Menu[/color][/b] anytime[/font_size][/indent]
+
+[font_size=24][color=#000000][b]🎯 GAME OBJECTIVES[/b][/color][/font_size]
+[indent][font_size=18]• Collect all trash scattered around the city
+• Avoid obstacles and traffic
+• Complete levels within time limit
+• Earn eco-points for cleaning[/font_size][/indent]
+
+[font_size=24][color=#000000][b]💡 TIPS[/b][/color][/font_size]
+[indent][font_size=18]• Plan your route efficiently
+• Use brakes on sharp turns
+• Watch for pedestrians and vehicles
+• Recycle different types of trash for bonus points[/font_size][/indent]"
+fit_content = true
+autowrap_mode = 2
+
+[node name="BtnExit" type="VBoxContainer" parent="InstructionScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 287.99994
+offset_top = 270.0
+offset_right = 1527.0
+offset_bottom = 622.00073
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
+
+[node name="pause_exit" type="TextureButton" parent="InstructionScreen/BtnExit"]
+layout_mode = 2
+texture_normal = ExtResource("34_p6xkl")
+texture_hover = ExtResource("35_wsth5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InstructionScreen"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Background" type="TextureRect" parent="InstructionScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("19_shhps")
+expand_mode = 5
+
 [node name="GameOverScreen" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 
 [node name="Panel" type="Panel" parent="GameOverScreen"]
 modulate = Color(0.00069389754, 0.00069389766, 0.0006938976, 0.27058825)

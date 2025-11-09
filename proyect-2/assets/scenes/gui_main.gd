@@ -5,7 +5,10 @@ extends Node
 @export var button_exit: TextureButton
 @export var button_settings: TextureButton
 @export var button_menu: TextureButton
+@export var button_credits: TextureButton
 @export var button_continue: TextureButton
+@export var button_instructions: TextureButton
+
 @export var button_restart: TextureButton
 
 # Labels (opcional, si las vas a usar)
@@ -27,6 +30,7 @@ extends Node
 @export var GameOverScreen: CanvasLayer
 
 func _ready():
+	print("Esto es una prueba para ver si la lógica es la de este script !")
 	# Conectar señales solo si los botones están asignados
 	if button_start:
 		button_start.pressed.connect(_on_button_start_pressed)
@@ -36,6 +40,8 @@ func _ready():
 		button_menu.pressed.connect(_on_button_menu_pressed)
 	if button_settings:
 		button_settings.pressed.connect(_on_button_settings_pressed)
+	if button_continue:
+		button_continue.pressed.connect(_on_button_continue_pressed)
 	if button_continue:
 		button_continue.pressed.connect(_on_button_continue_pressed)
 
