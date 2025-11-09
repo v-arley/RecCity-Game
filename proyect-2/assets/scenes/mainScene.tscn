@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://byse3jpmgnpkm"]
+[gd_scene load_steps=52 format=3 uid="uid://byse3jpmgnpkm"]
 
 [ext_resource type="Sky" uid="uid://ber2txbf74tf4" path="res://assets/skyBox/sky01.tres" id="1_8jaiy"]
 [ext_resource type="Script" path="res://scripts/mainController.gd" id="1_llb4w"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://c7yv3pfs2xlwf" path="res://assets/textures/UIresource/Normal/exit01.png" id="34_p6xkl"]
 [ext_resource type="Texture2D" uid="uid://cuvq457qu4si4" path="res://assets/textures/UIresource/Hover/exit01.png" id="35_wsth5"]
 [ext_resource type="Texture2D" uid="uid://drthsvl360kte" path="res://assets/textures/UIresource/Hover/instructionButtonHoverLeft.png" id="38_8n1ii"]
+[ext_resource type="Texture2D" uid="uid://c3lwrerser4er" path="res://assets/textures/backgroundCredits.png" id="43_dyyht"]
 
 [sub_resource type="Environment" id="Environment_q43bj"]
 background_mode = 2
@@ -194,7 +195,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.8
 [node name="ContainerGeneral" parent="Containers" instance=ExtResource("17_reuav")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.888817, 0, -26.721958)
 
-[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("vehicle", "hud", "menu_screen", "game_screen", "game_over_screen", "pause_screen", "instruction_screen", "lbl_timer", "prg_health", "btn_start", "btn_exit1", "btn_exit2", "btn_settings", "btn_continue", "btn_restart1", "btn_restart2", "btn_credits", "btn_instructions1", "btn_instructions2", "btn_exitInstructions", "lbl_paper_count", "lbl_glass_count", "lbl_metal_count", "lbl_plastic_count", "lbl_general_count", "lbl_corrects_final", "lbl_incorrects_final")]
+[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("vehicle", "hud", "menu_screen", "game_screen", "game_over_screen", "pause_screen", "instruction_screen", "credits_screen", "lbl_timer", "prg_health", "btn_start", "btn_exit1", "btn_exit2", "btn_settings", "btn_continue", "btn_restart1", "btn_restart2", "btn_credits", "btn_instructions1", "btn_instructions2", "btn_exitInstructions", "btn_exitCredits", "lbl_paper_count", "lbl_glass_count", "lbl_metal_count", "lbl_plastic_count", "lbl_general_count", "lbl_corrects_final", "lbl_incorrects_final")]
 script = ExtResource("18_siqd4")
 vehicle = NodePath("../Root2")
 hud = NodePath("../Control")
@@ -203,6 +204,7 @@ game_screen = NodePath("../GameScreen")
 game_over_screen = NodePath("../GameOverScreen")
 pause_screen = NodePath("../PauseScreen")
 instruction_screen = NodePath("../InstructionScreen")
+credits_screen = NodePath("../CreditScreen")
 lbl_timer = NodePath("../GameScreen/VBoxContainer2/Time")
 prg_health = NodePath("../GameScreen/VBoxContainer1/LifeProgressBar")
 btn_start = NodePath("../MenuScreen/ButtonStart/BtnStart2")
@@ -216,6 +218,7 @@ btn_credits = NodePath("../MenuScreen/ButtonCredits/BtnCredits")
 btn_instructions1 = NodePath("../MenuScreen/ButtonInstructions/BtnInstructions")
 btn_instructions2 = NodePath("../PauseScreen/BtnInstructions/pause_instructions")
 btn_exitInstructions = NodePath("../InstructionScreen/BtnExit/pause_exit")
+btn_exitCredits = NodePath("../CreditScreen/BtnExit/credits_exit")
 lbl_paper_count = NodePath("../GameOverScreen/VBoxContainer7/Panel/LblCountValuePaper")
 lbl_glass_count = NodePath("../GameOverScreen/VBoxContainer2/Panel/LblCountValueGlass")
 lbl_metal_count = NodePath("../GameOverScreen/VBoxContainer4/Panel/LblCountValueMetal")
@@ -916,6 +919,118 @@ grow_vertical = 2
 size_flags_stretch_ratio = 0.0
 
 [node name="Background" type="TextureRect" parent="InstructionScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("19_shhps")
+expand_mode = 5
+
+[node name="CreditScreen" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="CreditScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("43_dyyht")
+stretch_mode = 6
+
+[node name="Control" type="Control" parent="CreditScreen/TextureRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CreditScreen/TextureRect/Control"]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.9599991, 1.212895)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditScreen/TextureRect/Control/ScrollContainer"]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[font_size=36][center][wave amp=50.0 freq=5.0][b][color=#2E8B57]🎮 RC GAME - CREDITS[/color][/b][/wave][/center][/font_size]
+
+[font_size=24][b][color=#FF6B35]🎓 ACADEMIC PROJECT[/color][/b][/font_size]
+[indent][font_size=18]• [b]Course:[/b] Video Game Programming Environment
+• [b]University:[/b] Universidad Nacional de Costa Rica (UNA)
+• [b]Professor:[/b] Deiver Herrera Sánchez[/font_size][/indent]
+
+[font_size=24][b][color=#FF6B35]👥 DEVELOPMENT TEAM[/color][/b][/font_size]
+[indent][font_size=18]• [b][color=#4A90E2]Allan Calderon Vargas[/color][/b] - Programmer & Designer
+• [b][color=#4A90E2]Jousten Blanco Fonseca[/color][/b] - Programmer & Designer  
+• [b][color=#4A90E2]Sebastián Granados Barrantes[/color][/b] - Programmer & Designer[/font_size][/indent]
+
+[font_size=24][b][color=#FF6B35]🎵 MUSIC & AUDIO[/color][/b][/font_size]
+[indent][font_size=18]• [b]Background Music:[/b] Poly Pizza
+• [b]Sound Effects:[/b] Poly Pizza
+• [b]Additional Audio:[/b] Various free sources
+• [b]Audio Implementation:[/b] Development Team[/font_size][/indent]
+
+[font_size=24][b][color=#FF6B35]🛠️ 3D MODELS & ASSETS[/color][/b][/font_size]
+[indent][font_size=18]• [b]Vehicle Models:[/b] Poly Pizza
+• [b]Environment Assets:[/b] Poly Pizza
+• [b]Props and Objects:[/b] Poly Pizza & other free platforms
+• [b]Asset Integration:[/b] Development Team[/font_size][/indent]
+
+[font_size=24][b][color=#FF6B35]⚙️ DEVELOPMENT TOOLS[/color][/b][/font_size]
+[indent][font_size=18]• [b]Game Engine:[/b] Godot Engine 4.2
+• [b]Programming Language:[/b] GDScript
+• [b]3D Modeling Tools:[/b] Various software
+• [b]Version Control:[/b] Git[/font_size][/indent]
+
+[font_size=24][b][color=#FF6B35]🙏 SPECIAL THANKS[/color][/b][/font_size]
+[indent][font_size=18]• Professor Deiver Herrera Sánchez for guidance and mentorship
+• Universidad Nacional de Costa Rica for academic support
+• Poly Pizza for providing quality free assets
+• Godot Engine Community for resources and support
+• All beta testers for valuable feedback[/font_size][/indent]
+
+[font_size=24][b][color=#FF6B35]📜 PROJECT INFORMATION[/color][/b][/font_size]
+[indent][font_size=18]• [b]Project Type:[/b] Academic - Educational purposes
+• [b]Development Period:[/b] Course duration
+• [b]Third-party Assets:[/b] Used under respective licenses
+• [b]Source Code:[/b] Developed exclusively for this course[/font_size][/indent]
+
+[font_size=28][center][shake rate=10.0 level=5.0][b][color=#228B22]Thank you for playing RC Game! 🚛💚[/color][/b][/shake][/center][/font_size]"
+fit_content = true
+autowrap_mode = 1
+
+[node name="BtnExit" type="VBoxContainer" parent="CreditScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 287.99994
+offset_top = 270.0
+offset_right = 1527.0
+offset_bottom = 622.00073
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
+
+[node name="credits_exit" type="TextureButton" parent="CreditScreen/BtnExit"]
+layout_mode = 2
+texture_normal = ExtResource("34_p6xkl")
+texture_hover = ExtResource("35_wsth5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditScreen"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Background" type="TextureRect" parent="CreditScreen/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("19_shhps")

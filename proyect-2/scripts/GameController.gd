@@ -13,6 +13,8 @@ class_name GameController
 @export var game_over_screen: CanvasLayer
 @export var pause_screen: CanvasLayer
 @export var instruction_screen: CanvasLayer
+@export var credits_screen: CanvasLayer
+
 
 @export var lbl_timer: Label
 @export var prg_health: ProgressBar
@@ -29,6 +31,7 @@ class_name GameController
 @export var btn_instructions1: TextureButton
 @export var btn_instructions2: TextureButton
 @export var btn_exitInstructions: TextureButton
+@export var btn_exitCredits: TextureButton
 
 # Labels de Game Over
 @export var lbl_paper_count: Label
@@ -66,6 +69,8 @@ func _ready():
 	if btn_instructions1: btn_instructions1.pressed.connect(_on_btn_instructions_pressed)
 	if btn_instructions2: btn_instructions2.pressed.connect(_on_btn_instructions_pressed)
 	if btn_exitInstructions: btn_exitInstructions.pressed.connect(_on_btn_exit_instructions_pressed)
+	if btn_exitCredits: btn_exitCredits.pressed.connect(_on_btn_exit_credits_pressed)
+	
 	
 
 	if vehicle:
@@ -87,6 +92,14 @@ func _process(delta: float):
 # ======================================================
 # === EVENTOS DE JUEGO =================================
 # ======================================================
+
+func _on_btn_exit_credits_pressed ():
+	credits_screen.visible = false
+	menu_screen.visible = true
+
+func _on_btn_credits_pressed ():
+	menu_screen.visible = false
+	credits_screen.visible = true
 
 func _on_btn_start_pressed():
 	_start_game()
@@ -114,9 +127,6 @@ func _on_btn_continue_pressed():
 
 func _on_btn_restart_pressed():
 	restart_game()
-	
-func _on_btn_credits_pressed():
-	print("esto es una prueba de que se presionaron los creditos")
 	
 func _on_btn_instructions_pressed ():
 	print("Esto es una prueba de que se presiono el boton de instrucciones")
