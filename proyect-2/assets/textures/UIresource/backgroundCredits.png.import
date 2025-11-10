@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2mxj71nr75b6"
-path="res://.godot/imported/glass.png-19d204154845253fb147391796088cdd.ctex"
+uid="uid://c3lwrerser4er"
+path="res://.godot/imported/backgroundCredits.png-1c7bdd5c6821df46f1eca71a17fa4906.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/UIresource/glass.png"
-dest_files=["res://.godot/imported/glass.png-19d204154845253fb147391796088cdd.ctex"]
+source_file="res://assets/textures/UIresource/backgroundCredits.png"
+dest_files=["res://.godot/imported/backgroundCredits.png-1c7bdd5c6821df46f1eca71a17fa4906.ctex"]
 
 [params]
 
