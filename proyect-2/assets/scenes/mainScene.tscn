@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://byse3jpmgnpkm"]
+[gd_scene load_steps=52 format=3 uid="uid://byse3jpmgnpkm"]
 
 [ext_resource type="Sky" uid="uid://ber2txbf74tf4" path="res://assets/skyBox/sky01.tres" id="1_8jaiy"]
 [ext_resource type="Script" path="res://scripts/mainController.gd" id="1_llb4w"]
@@ -20,33 +20,33 @@
 [ext_resource type="Script" uid="uid://cldi82tvatrqy" path="res://scripts/GameController.gd" id="18_siqd4"]
 [ext_resource type="Texture2D" uid="uid://c0kt31g1lrx18" path="res://assets/textures/UIresource/background01.png" id="19_shhps"]
 [ext_resource type="Texture2D" uid="uid://bksb7lcn4ae7u" path="res://assets/textures/UIresource/Imagen1.png" id="20_dyyht"]
-[ext_resource type="Texture2D" uid="uid://dm4xvdvunp38v" path="res://assets/textures/UIresource/Normal/startButton.png" id="20_reuav"]
 [ext_resource type="Texture2D" uid="uid://drd7evyd5vm71" path="res://assets/textures/UIresource/Imagen6.png" id="20_v8har"]
 [ext_resource type="Texture2D" uid="uid://c4vvhs0iednep" path="res://assets/textures/UIresource/Imagen7.png" id="21_321os"]
-[ext_resource type="Texture2D" uid="uid://dljpppsxpnwgm" path="res://assets/textures/UIresource/Hover/startButton.png" id="21_ulo7l"]
-[ext_resource type="Texture2D" uid="uid://bfvid58svrymh" path="res://assets/textures/UIresource/Normal/exitButton.png" id="23_7wfw4"]
 [ext_resource type="Texture2D" uid="uid://u17cm2mrgsj5" path="res://assets/textures/UIresource/titleGame.png" id="23_mkpx1"]
-[ext_resource type="Texture2D" uid="uid://cveehytty27f" path="res://assets/textures/UIresource/Hover/exitButton.png" id="24_v8har"]
 [ext_resource type="Texture2D" uid="uid://ca5pvby4c5cbl" path="res://assets/textures/UIresource/25f83bf5-80c0-4a0f-9fe7-3a52e44702bf.png" id="25_321os"]
-[ext_resource type="Texture2D" uid="uid://oyqp60gujtwa" path="res://assets/textures/UIresource/Normal/creditsButton.png" id="25_tq00l"]
-[ext_resource type="Texture2D" uid="uid://rlejbgr3l6rn" path="res://assets/textures/UIresource/Hover/creditsButtonHover.png" id="26_8n1ii"]
-[ext_resource type="Texture2D" uid="uid://c23rpyfhdatni" path="res://assets/textures/UIresource/Normal/instructionButton.png" id="27_dyyht"]
-[ext_resource type="Texture2D" uid="uid://dt86x2kfcwlj6" path="res://assets/textures/UIresource/Hover/instructionButtonHover.png" id="28_wm0pj"]
+[ext_resource type="Texture2D" uid="uid://4p0yknufw672" path="res://assets/textures/UIresource/Bnormal/start.png" id="25_hw001"]
+[ext_resource type="Texture2D" uid="uid://d1opq6swi36ps" path="res://assets/textures/UIresource/Bhover/startH.png" id="26_tq00l"]
+[ext_resource type="Texture2D" uid="uid://3tda0ukb2cvy" path="res://assets/textures/UIresource/Bnormal/credits.png" id="27_8n1ii"]
+[ext_resource type="Texture2D" uid="uid://bgknsp7thwvi6" path="res://assets/textures/UIresource/Bhover/creditsH.png" id="28_dyyht"]
 [ext_resource type="FontFile" uid="uid://b3l5iw714fi6b" path="res://assets/fonts/JUmble.ttf" id="29_shhps"]
+[ext_resource type="Texture2D" uid="uid://ct30p5wrfcj6" path="res://assets/textures/UIresource/Bnormal/instructions.png" id="29_wm0pj"]
 [ext_resource type="FontFile" uid="uid://3k4g0f8kcfvy" path="res://assets/fonts/COOPBL.TTF" id="30_2b60k"]
-[ext_resource type="Texture2D" uid="uid://cyxdj3jxnyhtn" path="res://assets/textures/UIresource/Normal/continue01.png" id="30_p6xkl"]
-[ext_resource type="Texture2D" uid="uid://diq5kgcyw7tgw" path="res://assets/textures/UIresource/Normal/restart01.png" id="30_tk0bn"]
-[ext_resource type="Texture2D" uid="uid://c0rqkmgpymlhh" path="res://assets/textures/UIresource/Hover/restart01.png" id="31_kmnt2"]
-[ext_resource type="Texture2D" uid="uid://bp62g0gdbcb71" path="res://assets/textures/UIresource/Hover/continue01.png" id="31_wsth5"]
+[ext_resource type="Texture2D" uid="uid://cp4tx10uenbk5" path="res://assets/textures/UIresource/Bhover/instructionsH.png" id="30_8fgwo"]
+[ext_resource type="Texture2D" uid="uid://r8tt2xl737dk" path="res://assets/textures/UIresource/Bnormal/exit.png" id="31_rso3t"]
+[ext_resource type="Texture2D" uid="uid://brobqthtffsau" path="res://assets/textures/UIresource/Bhover/exitH.png" id="32_41ega"]
 [ext_resource type="Texture2D" uid="uid://s5i06d15ka8i" path="res://assets/textures/UIresource/setting-3d-setting-icon-3d-setting-symbol-3d-setting-image-free-png.png" id="33_dyyht"]
-[ext_resource type="Texture2D" uid="uid://c7yv3pfs2xlwf" path="res://assets/textures/UIresource/Normal/exit01.png" id="34_p6xkl"]
-[ext_resource type="Texture2D" uid="uid://cuvq457qu4si4" path="res://assets/textures/UIresource/Hover/exit01.png" id="35_wsth5"]
-[ext_resource type="Texture2D" uid="uid://drthsvl360kte" path="res://assets/textures/UIresource/Hover/instructionButtonHoverLeft.png" id="38_8n1ii"]
+[ext_resource type="Texture2D" uid="uid://bieisip4m2dlm" path="res://assets/textures/UIresource/Bnormal/continue.png" id="36_olw7b"]
+[ext_resource type="Texture2D" uid="uid://bamlgph0h18jw" path="res://assets/textures/UIresource/Bhover/continueH.png" id="37_g5h5a"]
+[ext_resource type="Texture2D" uid="uid://bv67f2hurgu5w" path="res://assets/textures/UIresource/Bnormal/restart.png" id="38_i7csw"]
+[ext_resource type="Texture2D" uid="uid://bhfyhwiufb3ik" path="res://assets/textures/UIresource/Bhover/restartH.png" id="39_c7mn1"]
 [ext_resource type="Texture2D" uid="uid://c3lwrerser4er" path="res://assets/textures/UIresource/backgroundCredits.png" id="43_dyyht"]
 
 [sub_resource type="Environment" id="Environment_q43bj"]
 background_mode = 2
 sky = ExtResource("1_8jaiy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8n1ii"]
+bg_color = Color(0.18110761, 0.16669917, 0.25050288, 0.5372549)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reuav"]
 
@@ -84,6 +84,9 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq00l"]
+bg_color = Color(0.15686275, 0.15686275, 0.15686275, 0.5411765)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyyht"]
 
 [node name="Root" type="Node3D" node_paths=PackedStringArray("target_camera", "target_vehicle", "spawner_controller")]
@@ -102,7 +105,7 @@ fov = 90.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.011468281, -0.9968085, 0.07900192, 0.14704883, 0.07982937, 0.98590267, -0.9890627, 0.0003105309, 0.1474951, -4.2824554, 12.915024, 4.985775)
-light_color = Color(0.62512875, 0.6334646, 0.6152509, 1)
+light_color = Color(0.47872198, 0.49046135, 0.47087586, 1)
 light_energy = 3.833
 shadow_enabled = true
 
@@ -213,12 +216,12 @@ btn_start = NodePath("../MenuScreen/ContainerButtons/BtnStart2")
 btn_exit1 = NodePath("../MenuScreen/ContainerButtons/BtnExit1")
 btn_exit2 = NodePath("../GameOverScreen/ContainerButtons/game_over_exit")
 btn_settings = NodePath("../GameScreen/VBoxContainer/SettingsButton")
-btn_continue = NodePath("../PauseScreen/BtnContinue/pause_continue")
-btn_restart1 = NodePath("../PauseScreen/BtnRestart/pause_restart")
+btn_continue = NodePath("../PauseScreen/ContainerButtons/pause_continue")
+btn_restart1 = NodePath("../PauseScreen/ContainerButtons/pause_restart")
 btn_restart2 = NodePath("../GameOverScreen/ContainerButtons/game_over_restart")
 btn_credits = NodePath("../MenuScreen/ContainerButtons/BtnCredits")
 btn_instructions1 = NodePath("../MenuScreen/ContainerButtons/BtnInstructions")
-btn_instructions2 = NodePath("../PauseScreen/BtnInstructions/pause_instructions")
+btn_instructions2 = NodePath("../PauseScreen/ContainerButtons/pause_instructions")
 btn_exitInstructions = NodePath("../InstructionScreen/BtnExit/pause_exit")
 btn_exitCredits = NodePath("../CreditScreen/BtnExit/credits_exit")
 lbl_paper_count = NodePath("../GameOverScreen/HBoxContainer/VBoxContainer7/Panel/LblCountValuePaper")
@@ -277,6 +280,14 @@ scale = Vector2(0.29500002, 0.25)
 [node name="TextureRect" type="TextureRect" parent="MenuScreen/VBoxContainer3"]
 layout_mode = 2
 texture = ExtResource("20_dyyht")
+
+[node name="Background" type="Panel" parent="MenuScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8n1ii")
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="MenuScreen"]
 anchors_preset = 8
@@ -358,33 +369,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -394.0
-offset_top = -85.0
-offset_right = 1359.0
-offset_bottom = 1331.0
+offset_left = -428.0
+offset_top = -86.0
+offset_right = 1429.0
+offset_bottom = 1332.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.215, 0.215)
 
 [node name="BtnStart2" type="TextureButton" parent="MenuScreen/ContainerButtons"]
 layout_mode = 2
-texture_normal = ExtResource("20_reuav")
-texture_hover = ExtResource("21_ulo7l")
+texture_normal = ExtResource("25_hw001")
+texture_hover = ExtResource("26_tq00l")
 
 [node name="BtnCredits" type="TextureButton" parent="MenuScreen/ContainerButtons"]
 layout_mode = 2
-texture_normal = ExtResource("25_tq00l")
-texture_hover = ExtResource("26_8n1ii")
+texture_normal = ExtResource("27_8n1ii")
+texture_hover = ExtResource("28_dyyht")
 
 [node name="BtnInstructions" type="TextureButton" parent="MenuScreen/ContainerButtons"]
 layout_mode = 2
-texture_normal = ExtResource("27_dyyht")
-texture_hover = ExtResource("28_wm0pj")
+texture_normal = ExtResource("29_wm0pj")
+texture_hover = ExtResource("30_8fgwo")
 
 [node name="BtnExit1" type="TextureButton" parent="MenuScreen/ContainerButtons"]
 layout_mode = 2
-texture_normal = ExtResource("23_7wfw4")
-texture_hover = ExtResource("24_v8har")
+texture_normal = ExtResource("31_rso3t")
+texture_hover = ExtResource("32_41ega")
 
 [node name="GameScreen" type="CanvasLayer" parent="."]
 visible = false
@@ -697,6 +708,14 @@ vertical_alignment = 1
 process_mode = 3
 visible = false
 
+[node name="Background" type="Panel" parent="PauseScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tq00l")
+
 [node name="VBoxContainer4" type="VBoxContainer" parent="PauseScreen"]
 anchors_preset = 5
 anchor_left = 0.5
@@ -713,62 +732,31 @@ theme_override_fonts/font = ExtResource("29_shhps")
 theme_override_font_sizes/font_size = 160
 text = "RC-Game"
 
-[node name="BtnContinue" type="VBoxContainer" parent="PauseScreen"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -176.0
-offset_top = -101.0
-offset_right = 1237.0
-offset_bottom = 253.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.22, 0.22)
+[node name="ContainerButtons" type="VBoxContainer" parent="PauseScreen"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -256.0
+offset_right = 1888.0
+offset_bottom = 819.0
+grow_vertical = 0
+scale = Vector2(0.205, 0.205)
 
-[node name="pause_continue" type="TextureButton" parent="PauseScreen/BtnContinue"]
+[node name="pause_continue" type="TextureButton" parent="PauseScreen/ContainerButtons"]
 layout_mode = 2
-texture_normal = ExtResource("30_p6xkl")
-texture_hover = ExtResource("31_wsth5")
+texture_normal = ExtResource("36_olw7b")
+texture_hover = ExtResource("37_g5h5a")
 
-[node name="BtnInstructions" type="VBoxContainer" parent="PauseScreen"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -135.0
-offset_top = -38.00003
-offset_right = 1618.0
-offset_bottom = 322.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.22, 0.22)
-
-[node name="pause_instructions" type="TextureButton" parent="PauseScreen/BtnInstructions"]
+[node name="pause_instructions" type="TextureButton" parent="PauseScreen/ContainerButtons"]
 layout_mode = 2
-texture_normal = ExtResource("27_dyyht")
-texture_hover = ExtResource("38_8n1ii")
+texture_normal = ExtResource("29_wm0pj")
+texture_hover = ExtResource("30_8fgwo")
 
-[node name="BtnRestart" type="VBoxContainer" parent="PauseScreen"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -175.0
-offset_top = 27.0
-offset_right = 1064.0
-offset_bottom = 379.00073
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.22, 0.22)
-
-[node name="pause_restart" type="TextureButton" parent="PauseScreen/BtnRestart"]
+[node name="pause_restart" type="TextureButton" parent="PauseScreen/ContainerButtons"]
 layout_mode = 2
-texture_normal = ExtResource("30_tk0bn")
-texture_hover = ExtResource("31_kmnt2")
+texture_normal = ExtResource("38_i7csw")
+texture_hover = ExtResource("39_c7mn1")
 
 [node name="InstructionScreen" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -782,6 +770,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("19_shhps")
 stretch_mode = 6
+
+[node name="Background2" type="Panel" parent="InstructionScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8n1ii")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="InstructionScreen"]
 anchors_preset = 15
@@ -854,8 +850,8 @@ scale = Vector2(0.21, 0.21)
 
 [node name="pause_exit" type="TextureButton" parent="InstructionScreen/BtnExit"]
 layout_mode = 2
-texture_normal = ExtResource("34_p6xkl")
-texture_hover = ExtResource("35_wsth5")
+texture_normal = ExtResource("31_rso3t")
+texture_hover = ExtResource("32_41ega")
 
 [node name="CreditScreen" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -869,6 +865,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("43_dyyht")
 expand_mode = 2
+
+[node name="Background2" type="Panel" parent="CreditScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8n1ii")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CreditScreen"]
 anchors_preset = 15
@@ -963,12 +967,20 @@ scale = Vector2(0.21, 0.21)
 
 [node name="credits_exit" type="TextureButton" parent="CreditScreen/BtnExit"]
 layout_mode = 2
-texture_normal = ExtResource("34_p6xkl")
-texture_hover = ExtResource("35_wsth5")
+texture_normal = ExtResource("31_rso3t")
+texture_hover = ExtResource("32_41ega")
 
 [node name="GameOverScreen" type="CanvasLayer" parent="."]
 process_mode = 3
 visible = false
+
+[node name="Background" type="Panel" parent="GameOverScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tq00l")
 
 [node name="LblGameOver" type="Label" parent="GameOverScreen"]
 anchors_preset = 5
@@ -989,22 +1001,22 @@ vertical_alignment = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = -150.0
-offset_right = 1245.0
-offset_bottom = 552.0
+offset_left = 31.0
+offset_top = -183.0
+offset_right = 1270.0
+offset_bottom = 519.0
 grow_vertical = 0
 scale = Vector2(0.205, 0.205)
 
 [node name="game_over_restart" type="TextureButton" parent="GameOverScreen/ContainerButtons"]
 layout_mode = 2
-texture_normal = ExtResource("30_tk0bn")
-texture_hover = ExtResource("31_kmnt2")
+texture_normal = ExtResource("38_i7csw")
+texture_hover = ExtResource("39_c7mn1")
 
 [node name="game_over_exit" type="TextureButton" parent="GameOverScreen/ContainerButtons"]
 layout_mode = 2
-texture_normal = ExtResource("34_p6xkl")
-texture_hover = ExtResource("35_wsth5")
+texture_normal = ExtResource("31_rso3t")
+texture_hover = ExtResource("32_41ega")
 
 [node name="VBoxContainer8" type="VBoxContainer" parent="GameOverScreen"]
 anchors_preset = 8

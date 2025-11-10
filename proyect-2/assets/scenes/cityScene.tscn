@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://b5c4y6d0mil15"]
+[gd_scene load_steps=94 format=3 uid="uid://b5c4y6d0mil15"]
 
 [ext_resource type="Material" uid="uid://c1gihpwic7vyx" path="res://assets/materials/grass.tres" id="1_7nkqe"]
 [ext_resource type="PackedScene" uid="uid://bc0bjlf0m0ytc" path="res://assets/models/buildings/Building01.glb" id="3_8vnom"]
@@ -220,6 +220,8 @@ point_count = 8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mkjyc"]
 size = Vector3(9.932983, 1.869873, 0.7706299)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j5q41"]
 
 [node name="Root" type="Node3D"]
 
@@ -907,7 +909,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.07874, 0, -49.925186)
 curve = SubResource("Curve3D_p0ku1")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Circuits/Track"]
-transform = Transform3D(-0.00026648148, 0, 0.99989945, 0, 1, 0, -0.99989945, 0, -0.00026648148, -0.028514862, 0, -0.048095703)
+transform = Transform3D(-0.0002664814, 0, 0.99989915, 0, 1, 0, -0.99989915, 0, -0.0002664814, -0.028514862, 0, -0.048095703)
 use_model_front = true
 
 [node name="Track2" type="Path3D" parent="Circuits"]
@@ -921,7 +923,7 @@ use_model_front = true
 curve = SubResource("Curve3D_j5q41")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Circuits/Track3"]
-transform = Transform3D(-0.0036151852, 0, -0.9999298, 0, 1, 0, 0.9999298, 0, -0.0036151852, -50.44876, 0, -24.9877)
+transform = Transform3D(-0.003615184, 0, -0.9999295, 0, 1, 0, 0.9999295, 0, -0.003615184, -50.44876, 0, -24.9877)
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -2123,3 +2125,773 @@ skeleton = NodePath("../../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Walls4/Wall11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2453003, 0.010620117, -0.0018920898)
 shape = SubResource("BoxShape3D_mkjyc")
+
+[node name="Node3D1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.4966, 0, -13.972034)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D1"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, 0, -1.3552246, -24.428158)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block13" type="Node3D" parent="Node3D1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -37.494545)
+
+[node name="Building04" parent="Node3D1/Block13" instance=ExtResource("6_v74re")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 4.638668)
+
+[node name="Building05" parent="Node3D1/Block13" instance=ExtResource("7_lsvta")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.977833, 0, -5.7454376)
+
+[node name="Building07" parent="Node3D1/Block13" instance=ExtResource("9_v7lyx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -4.561016, 0, -4.0778046)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D1"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, 0, -1.3552246, 0)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block14" type="Node3D" parent="Node3D1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.816069)
+
+[node name="Building13" parent="Node3D1/Block14" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017067, 0, 4.179167)
+
+[node name="Building14" parent="Node3D1/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.99514, 0, -5.1775417)
+
+[node name="Building15" parent="Node3D1/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.8744316, 0, -4.7466145)
+
+[node name="Building16" parent="Node3D1/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572605, 0, 4.1507215)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D1"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, 0, -1.3552246, 0)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block15" type="Node3D" parent="Node3D1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 12.1161)
+
+[node name="Building" parent="Node3D1/Block15" instance=ExtResource("9_v7lyx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.6283984, 0, 5.120304)
+
+[node name="Building01" parent="Node3D1/Block15" instance=ExtResource("3_8vnom")]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, -0.6451645, 0, -4.517441)
+
+[node name="Building03" parent="Node3D1/Block15" instance=ExtResource("5_2xmuq")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -4.379978, 0, 5.120304)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D1"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, 0, -1.3552246, 25.418499)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block16" type="Node3D" parent="Node3D1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 37.735123)
+
+[node name="Building08" parent="Node3D1/Block16" instance=ExtResource("10_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.473797, 0, 4.282318)
+
+[node name="Building09" parent="Node3D1/Block16" instance=ExtResource("11_uog0c")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 3.7542572, 0, -5.859558)
+
+[node name="Building11" parent="Node3D1/Block16" instance=ExtResource("13_tuo4n")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -4.921135, 0, -4.2525253)
+
+[node name="Building12" parent="Node3D1/Block16" instance=ExtResource("12_ieqf8")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -4.215904, 0, 5.18338)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D1"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, 0, -1.3552246, 50.17676)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block17" type="Node3D" parent="Node3D1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 62.193535)
+
+[node name="Building" parent="Node3D1/Block17" instance=ExtResource("9_v7lyx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.6283984, 0, 5.120304)
+
+[node name="Building01" parent="Node3D1/Block17" instance=ExtResource("3_8vnom")]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, -0.6451645, 0, -4.517441)
+
+[node name="Building03" parent="Node3D1/Block17" instance=ExtResource("5_2xmuq")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -4.379978, 0, 5.120304)
+
+[node name="Node3D5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.288956, 0, -0.3871746)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D5"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, 0, -1.3552246, -24.428158)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block13" type="Node3D" parent="Node3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -37.494545)
+
+[node name="Building04" parent="Node3D5/Block13" instance=ExtResource("6_v74re")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 4.638668)
+
+[node name="Building05" parent="Node3D5/Block13" instance=ExtResource("7_lsvta")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.977833, 0, -5.7454376)
+
+[node name="Building07" parent="Node3D5/Block13" instance=ExtResource("9_v7lyx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -4.561016, 0, -4.0778046)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D5"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, 0, -1.3552246, 0)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block14" type="Node3D" parent="Node3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.816069)
+
+[node name="Building13" parent="Node3D5/Block14" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017067, 0, 4.179167)
+
+[node name="Building14" parent="Node3D5/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.99514, 0, -5.1775417)
+
+[node name="Building15" parent="Node3D5/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.8744316, 0, -4.7466145)
+
+[node name="Building16" parent="Node3D5/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572605, 0, 4.1507215)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D5"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, 0, -1.3552246, 0)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block15" type="Node3D" parent="Node3D5"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 12.1161)
+
+[node name="Building" parent="Node3D5/Block15" instance=ExtResource("9_v7lyx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.6283984, 0, 5.120304)
+
+[node name="Building01" parent="Node3D5/Block15" instance=ExtResource("3_8vnom")]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, -0.6451645, 0, -4.517441)
+
+[node name="Building03" parent="Node3D5/Block15" instance=ExtResource("5_2xmuq")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -4.379978, 0, 5.120304)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D5"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, 0, -1.3552246, 25.418499)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block16" type="Node3D" parent="Node3D5"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 37.735123)
+
+[node name="Building08" parent="Node3D5/Block16" instance=ExtResource("10_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.473797, 0, 4.282318)
+
+[node name="Building09" parent="Node3D5/Block16" instance=ExtResource("11_uog0c")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 3.7542572, 0, -5.859558)
+
+[node name="Building11" parent="Node3D5/Block16" instance=ExtResource("13_tuo4n")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -4.921135, 0, -4.2525253)
+
+[node name="Building12" parent="Node3D5/Block16" instance=ExtResource("12_ieqf8")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -4.215904, 0, 5.18338)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D5"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, 0, -1.3552246, 50.17676)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block17" type="Node3D" parent="Node3D5"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 62.193535)
+
+[node name="Building" parent="Node3D5/Block17" instance=ExtResource("9_v7lyx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.6283984, 0, 5.120304)
+
+[node name="Building01" parent="Node3D5/Block17" instance=ExtResource("3_8vnom")]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, -0.6451645, 0, -4.517441)
+
+[node name="Building03" parent="Node3D5/Block17" instance=ExtResource("5_2xmuq")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -4.379978, 0, 5.120304)
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.738625, 0, 11.078007)
+
+[node name="Block09" type="Node3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -61.86275)
+
+[node name="Building08" parent="Node3D2/Block09" instance=ExtResource("10_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.473797, 0, 4.28232)
+
+[node name="Building09" parent="Node3D2/Block09" instance=ExtResource("11_uog0c")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 3.754259, 0, -5.859559)
+
+[node name="Building11" parent="Node3D2/Block09" instance=ExtResource("13_tuo4n")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -4.921134, 0, -4.2525244)
+
+[node name="Building12" parent="Node3D2/Block09" instance=ExtResource("12_ieqf8")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -4.215904, 0, 5.183382)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, -0.8917465, -1.3552246, -48.881645)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block05" type="Node3D" parent="Node3D2"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -37.56238)
+
+[node name="Building13" parent="Node3D2/Block05" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017067, 0, 4.179167)
+
+[node name="Building14" parent="Node3D2/Block05" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.99514, 0, -5.1775427)
+
+[node name="Building05" parent="Node3D2/Block05" instance=ExtResource("7_lsvta")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.087391, 0, -5.2239122)
+
+[node name="Building15" parent="Node3D2/Block05" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572605, 0, 4.1507215)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, -0.8917465, -1.3552246, -24.453487)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block06" type="Node3D" parent="Node3D2"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -12.816069)
+
+[node name="Building13" parent="Node3D2/Block06" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017067, 0, 4.179166)
+
+[node name="Building14" parent="Node3D2/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.9951391, 0, -5.1775436)
+
+[node name="Building15" parent="Node3D2/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.874432, 0, -4.7466145)
+
+[node name="Building16" parent="Node3D2/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.5726023, 0, 4.1507215)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, -0.8917465, -1.3552246, -24.453487)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block07" type="Node3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.673)
+
+[node name="Building08" parent="Node3D2/Block07" instance=ExtResource("10_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.473797, 0, 4.28232)
+
+[node name="Building09" parent="Node3D2/Block07" instance=ExtResource("11_uog0c")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 3.754259, 0, -5.859559)
+
+[node name="Building11" parent="Node3D2/Block07" instance=ExtResource("13_tuo4n")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -4.921134, 0, -4.2525244)
+
+[node name="Building12" parent="Node3D2/Block07" instance=ExtResource("12_ieqf8")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -4.215904, 0, 5.183382)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, -0.8917465, -1.3552246, 0.9650116)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block08" type="Node3D" parent="Node3D2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 37.931973)
+
+[node name="Building02" parent="Node3D2/Block08" instance=ExtResource("4_v3aic")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 1.2578087, 0, -4.711151)
+
+[node name="Building01" parent="Node3D2/Block08" instance=ExtResource("3_8vnom")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -0.2655716, 0, 3.1549664)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, -0.8917465, -1.3552246, 25.723274)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Node3D6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.96494, 0, 22.398716)
+
+[node name="Block09" type="Node3D" parent="Node3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -61.86275)
+
+[node name="Building08" parent="Node3D6/Block09" instance=ExtResource("10_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.473797, 0, 4.28232)
+
+[node name="Building09" parent="Node3D6/Block09" instance=ExtResource("11_uog0c")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 3.754259, 0, -5.859559)
+
+[node name="Building11" parent="Node3D6/Block09" instance=ExtResource("13_tuo4n")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -4.921134, 0, -4.2525244)
+
+[node name="Building12" parent="Node3D6/Block09" instance=ExtResource("12_ieqf8")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -4.215904, 0, 5.183382)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D6"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, -0.8917465, -1.3552246, -48.881645)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block05" type="Node3D" parent="Node3D6"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -37.56238)
+
+[node name="Building13" parent="Node3D6/Block05" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017067, 0, 4.179167)
+
+[node name="Building14" parent="Node3D6/Block05" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.99514, 0, -5.1775427)
+
+[node name="Building05" parent="Node3D6/Block05" instance=ExtResource("7_lsvta")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.087391, 0, -5.2239122)
+
+[node name="Building15" parent="Node3D6/Block05" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572605, 0, 4.1507215)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D6"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, -0.8917465, -1.3552246, -24.453487)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block06" type="Node3D" parent="Node3D6"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -12.816069)
+
+[node name="Building13" parent="Node3D6/Block06" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017067, 0, 4.179166)
+
+[node name="Building14" parent="Node3D6/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.9951391, 0, -5.1775436)
+
+[node name="Building15" parent="Node3D6/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.874432, 0, -4.7466145)
+
+[node name="Building16" parent="Node3D6/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.5726023, 0, 4.1507215)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D6"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, -0.8917465, -1.3552246, -24.453487)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block07" type="Node3D" parent="Node3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.673)
+
+[node name="Building08" parent="Node3D6/Block07" instance=ExtResource("10_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.473797, 0, 4.28232)
+
+[node name="Building09" parent="Node3D6/Block07" instance=ExtResource("11_uog0c")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 3.754259, 0, -5.859559)
+
+[node name="Building11" parent="Node3D6/Block07" instance=ExtResource("13_tuo4n")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -4.921134, 0, -4.2525244)
+
+[node name="Building12" parent="Node3D6/Block07" instance=ExtResource("12_ieqf8")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -4.215904, 0, 5.183382)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D6"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, -0.8917465, -1.3552246, 0.9650116)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block08" type="Node3D" parent="Node3D6"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 37.931973)
+
+[node name="Building02" parent="Node3D6/Block08" instance=ExtResource("4_v3aic")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 1.2578087, 0, -4.711151)
+
+[node name="Building01" parent="Node3D6/Block08" instance=ExtResource("3_8vnom")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -0.2655716, 0, 3.1549664)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D6"]
+transform = Transform3D(20.055, 0, 0, 0, 2.745, 0, 0, 0, 5.25, -0.8917465, -1.3552246, 25.723274)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Node3D3" type="Node3D" parent="."]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -9.7850685, 0, 67.3114)
+
+[node name="Block09" type="Node3D" parent="Node3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -37.477768)
+
+[node name="Building02" parent="Node3D3/Block09" instance=ExtResource("4_v3aic")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 1.2578077, 0, -4.711151)
+
+[node name="Building01" parent="Node3D3/Block09" instance=ExtResource("3_8vnom")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -1.2909622, 0, 4.4659424)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D3"]
+transform = Transform3D(20.054996, 0, -1.4210855e-14, 0, 2.745, 0, 0, 0, 5.249999, -0.8917465, -1.3552246, -49.92841)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block10" type="Node3D" parent="Node3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.936997)
+
+[node name="Building13" parent="Node3D3/Block10" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017057, 0, 4.179167)
+
+[node name="Building15" parent="Node3D3/Block10" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.995141, 0, -5.1775427)
+
+[node name="Building05" parent="Node3D3/Block10" instance=ExtResource("7_lsvta")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.087389, 0, -5.2239122)
+
+[node name="Building14" parent="Node3D3/Block10" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D3"]
+transform = Transform3D(20.054996, 0, -1.4210855e-14, 0, 2.745, 0, 0, 0, 5.249999, -0.8917465, -1.3552246, -25.500256)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block11" type="Node3D" parent="Node3D3"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 11.933546)
+
+[node name="Building13" parent="Node3D3/Block11" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.401704, 0, 4.1791697)
+
+[node name="Building14" parent="Node3D3/Block11" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.9951415, 0, -5.463273)
+
+[node name="Building15" parent="Node3D3/Block11" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.8744287, 0, -4.7466135)
+
+[node name="Building16" parent="Node3D3/Block11" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D3"]
+transform = Transform3D(20.054996, 0, -1.4210855e-14, 0, 2.745, 0, 0, 0, 5.249999, -0.8917465, -1.3552246, -25.500256)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block12" type="Node3D" parent="Node3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 37.604717)
+
+[node name="Building13" parent="Node3D3/Block12" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -4.7165384, 0, -5.760273)
+
+[node name="Building14" parent="Node3D3/Block12" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.825948, 0, -5.9107666)
+
+[node name="Building06" parent="Node3D3/Block12" instance=ExtResource("8_8hifi")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, 0.7566061, 0, 4.093712)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D3"]
+transform = Transform3D(20.054996, 0, -1.4210855e-14, 0, 2.745, 0, 0, 0, 5.249999, -0.8917465, -1.3552246, -0.08176041)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block13" type="Node3D" parent="Node3D3"]
+transform = Transform3D(-4.3711378e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.3711378e-08, 0, 0, -63.256153)
+
+[node name="Building13" parent="Node3D3/Block13" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.401704, 0, 4.1791697)
+
+[node name="Building14" parent="Node3D3/Block13" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.9951415, 0, -5.463273)
+
+[node name="Building15" parent="Node3D3/Block13" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.8744287, 0, -4.7466135)
+
+[node name="Building16" parent="Node3D3/Block13" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D3"]
+transform = Transform3D(20.054998, 0, 0, 0, 2.745, 0, 0, 0, 5.2499995, -0.8917465, -1.3552246, 24.676498)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Node3D7" type="Node3D" parent="."]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -23.935947, 0, 87.971695)
+
+[node name="Block09" type="Node3D" parent="Node3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -37.477768)
+
+[node name="Building02" parent="Node3D7/Block09" instance=ExtResource("4_v3aic")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 1.2578077, 0, -4.711151)
+
+[node name="Building01" parent="Node3D7/Block09" instance=ExtResource("3_8vnom")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, -1.2909622, 0, 4.4659424)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D7"]
+transform = Transform3D(20.054996, 0, -1.4210855e-14, 0, 2.745, 0, 0, 0, 5.249999, -0.8917465, -1.3552246, -49.92841)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block10" type="Node3D" parent="Node3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.936997)
+
+[node name="Building13" parent="Node3D7/Block10" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017057, 0, 4.179167)
+
+[node name="Building15" parent="Node3D7/Block10" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.995141, 0, -5.1775427)
+
+[node name="Building05" parent="Node3D7/Block10" instance=ExtResource("7_lsvta")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.087389, 0, -5.2239122)
+
+[node name="Building14" parent="Node3D7/Block10" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D7"]
+transform = Transform3D(20.054996, 0, -1.4210855e-14, 0, 2.745, 0, 0, 0, 5.249999, -0.8917465, -1.3552246, -25.500256)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block11" type="Node3D" parent="Node3D7"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 11.933546)
+
+[node name="Building13" parent="Node3D7/Block11" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.401704, 0, 4.1791697)
+
+[node name="Building14" parent="Node3D7/Block11" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.9951415, 0, -5.463273)
+
+[node name="Building15" parent="Node3D7/Block11" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.8744287, 0, -4.7466135)
+
+[node name="Building16" parent="Node3D7/Block11" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D7"]
+transform = Transform3D(20.054996, 0, -1.4210855e-14, 0, 2.745, 0, 0, 0, 5.249999, -0.8917465, -1.3552246, -25.500256)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block12" type="Node3D" parent="Node3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 37.604717)
+
+[node name="Building13" parent="Node3D7/Block12" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -4.7165384, 0, -5.760273)
+
+[node name="Building14" parent="Node3D7/Block12" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.825948, 0, -5.9107666)
+
+[node name="Building06" parent="Node3D7/Block12" instance=ExtResource("8_8hifi")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, 0.7566061, 0, 4.093712)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D7"]
+transform = Transform3D(20.054996, 0, -1.4210855e-14, 0, 2.745, 0, 0, 0, 5.249999, -0.8917465, -1.3552246, -0.08176041)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block13" type="Node3D" parent="Node3D7"]
+transform = Transform3D(-4.3711378e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.3711378e-08, 0, 0, -63.256153)
+
+[node name="Building13" parent="Node3D7/Block13" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.401704, 0, 4.1791697)
+
+[node name="Building14" parent="Node3D7/Block13" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.9951415, 0, -5.463273)
+
+[node name="Building15" parent="Node3D7/Block13" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.8744287, 0, -4.7466135)
+
+[node name="Building16" parent="Node3D7/Block13" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D7"]
+transform = Transform3D(20.054998, 0, 0, 0, 2.745, 0, 0, 0, 5.2499995, -0.8917465, -1.3552246, 24.676498)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Node3D4" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.320694, 0, -65.62056)
+
+[node name="Block11" type="Node3D" parent="Node3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.12972, 0, 3.2773056)
+
+[node name="Building13" parent="Node3D4/Block11" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017057, 0, 4.179167)
+
+[node name="Building15" parent="Node3D4/Block11" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.995141, 0, -5.1775427)
+
+[node name="Building05" parent="Node3D4/Block11" instance=ExtResource("7_lsvta")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.087389, 0, -5.2239122)
+
+[node name="Building14" parent="Node3D4/Block11" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D4"]
+transform = Transform3D(-8.766318e-07, 0, -5.25, 0, 2.745, 0, 20.054998, 0, -2.2948478e-07, 51.0786, -1.3552246, 7.6293945e-06)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block02" type="Node3D" parent="Node3D4"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 37.71628, 0, 0)
+
+[node name="Building13" parent="Node3D4/Block02" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -4.7165375, 0, -5.760273)
+
+[node name="Building14" parent="Node3D4/Block02" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.8259478, 0, -5.9107666)
+
+[node name="Building06" parent="Node3D4/Block02" instance=ExtResource("8_8hifi")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, 0.7566061, 0, 4.093712)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D4"]
+transform = Transform3D(-8.766318e-07, 0, -5.25, 0, 2.745, 0, 20.054998, 0, -2.2948478e-07, 25.062355, -1.3552246, 0)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block06" type="Node3D" parent="Node3D4"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.793918, 0, 0)
+
+[node name="Building13" parent="Node3D4/Block06" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017067, 0, 4.179166)
+
+[node name="Building14" parent="Node3D4/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.9951391, 0, -5.1775436)
+
+[node name="Building15" parent="Node3D4/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.874432, 0, -4.7466145)
+
+[node name="Building16" parent="Node3D4/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.5726023, 0, 4.1507215)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D4"]
+transform = Transform3D(-8.766318e-07, 0, -5.25, 0, 2.745, 0, 20.054998, 0, -2.2948478e-07, 0.6517916, -1.3552246, 0)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block10" type="Node3D" parent="Node3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.165793, 0, 0)
+
+[node name="Building13" parent="Node3D4/Block10" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017057, 0, 4.179167)
+
+[node name="Building15" parent="Node3D4/Block10" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.995141, 0, -5.1775427)
+
+[node name="Building05" parent="Node3D4/Block10" instance=ExtResource("7_lsvta")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.087389, 0, -5.2239122)
+
+[node name="Building14" parent="Node3D4/Block10" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D4"]
+transform = Transform3D(-8.766318e-07, 0, -5.25, 0, 2.745, 0, 20.054998, 0, -2.2948478e-07, -24.748394, -1.3552246, 0)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block14" type="Node3D" parent="Node3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.02927, 0, 0)
+
+[node name="Building13" parent="Node3D4/Block14" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017067, 0, 4.179167)
+
+[node name="Building14" parent="Node3D4/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.99514, 0, -5.1775417)
+
+[node name="Building15" parent="Node3D4/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.8744316, 0, -4.7466145)
+
+[node name="Building16" parent="Node3D4/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572605, 0, 4.1507215)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D4"]
+transform = Transform3D(-8.766318e-07, 0, -5.25, 0, 2.745, 0, 20.054998, 0, -2.2948478e-07, -49.488815, -1.3552246, -7.6293945e-06)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Node3D8" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.9930115, 0, -87.0473)
+
+[node name="Block11" type="Node3D" parent="Node3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.12972, 0, 3.2773056)
+
+[node name="Building13" parent="Node3D8/Block11" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017057, 0, 4.179167)
+
+[node name="Building15" parent="Node3D8/Block11" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.995141, 0, -5.1775427)
+
+[node name="Building05" parent="Node3D8/Block11" instance=ExtResource("7_lsvta")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.087389, 0, -5.2239122)
+
+[node name="Building14" parent="Node3D8/Block11" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D8"]
+transform = Transform3D(-8.766318e-07, 0, -5.25, 0, 2.745, 0, 20.054998, 0, -2.2948478e-07, 51.0786, -1.3552246, 7.6293945e-06)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block02" type="Node3D" parent="Node3D8"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 37.71628, 0, 0)
+
+[node name="Building13" parent="Node3D8/Block02" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -4.7165375, 0, -5.760273)
+
+[node name="Building14" parent="Node3D8/Block02" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 4.8259478, 0, -5.9107666)
+
+[node name="Building06" parent="Node3D8/Block02" instance=ExtResource("8_8hifi")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6, 0, 5.2453663e-07, 0, -6, 0.7566061, 0, 4.093712)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D8"]
+transform = Transform3D(-8.766318e-07, 0, -5.25, 0, 2.745, 0, 20.054998, 0, -2.2948478e-07, 25.062355, -1.3552246, 0)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block06" type="Node3D" parent="Node3D8"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.793918, 0, 0)
+
+[node name="Building13" parent="Node3D8/Block06" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017067, 0, 4.179166)
+
+[node name="Building14" parent="Node3D8/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.9951391, 0, -5.1775436)
+
+[node name="Building15" parent="Node3D8/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.874432, 0, -4.7466145)
+
+[node name="Building16" parent="Node3D8/Block06" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.5726023, 0, 4.1507215)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D8"]
+transform = Transform3D(-8.766318e-07, 0, -5.25, 0, 2.745, 0, 20.054998, 0, -2.2948478e-07, 0.6517916, -1.3552246, 0)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block10" type="Node3D" parent="Node3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.165793, 0, 0)
+
+[node name="Building13" parent="Node3D8/Block10" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017057, 0, 4.179167)
+
+[node name="Building15" parent="Node3D8/Block10" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.995141, 0, -5.1775427)
+
+[node name="Building05" parent="Node3D8/Block10" instance=ExtResource("7_lsvta")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.087389, 0, -5.2239122)
+
+[node name="Building14" parent="Node3D8/Block10" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572604, 0, 4.1507215)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D8"]
+transform = Transform3D(-8.766318e-07, 0, -5.25, 0, 2.745, 0, 20.054998, 0, -2.2948478e-07, -24.748394, -1.3552246, 0)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
+
+[node name="Block14" type="Node3D" parent="Node3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.02927, 0, 0)
+
+[node name="Building13" parent="Node3D8/Block14" instance=ExtResource("14_v7lyx")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 4.4017067, 0, 4.179167)
+
+[node name="Building14" parent="Node3D8/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3.99514, 0, -5.1775417)
+
+[node name="Building15" parent="Node3D8/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 5.8744316, 0, -4.7466145)
+
+[node name="Building16" parent="Node3D8/Block14" instance=ExtResource("15_p0ku1")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -5.572605, 0, 4.1507215)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D8"]
+transform = Transform3D(-8.766318e-07, 0, -5.25, 0, 2.745, 0, 20.054998, 0, -2.2948478e-07, -49.488815, -1.3552246, -7.6293945e-06)
+material_override = ExtResource("3_j1rlb")
+mesh = SubResource("BoxMesh_j5q41")
