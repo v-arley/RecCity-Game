@@ -57,6 +57,8 @@ var game_running: bool = false
 func _ready():
 	_show_menu_screen()
 	_disable_vehicle_controls()
+	if AudioManager:
+		AudioManager.play_menu_music()
 	
 	if btn_start:    btn_start.pressed.connect(_on_btn_start_pressed)
 	if btn_exit1:    btn_exit1.pressed.connect(_on_btn_exit_pressed)
@@ -94,20 +96,32 @@ func _process(delta: float):
 # ======================================================
 
 func _on_btn_exit_credits_pressed ():
+	if AudioManager: 
+		AudioManager.play_selected()
 	credits_screen.visible = false
 	menu_screen.visible = true
 
 func _on_btn_credits_pressed ():
+	if AudioManager: 
+		AudioManager.play_selected()
 	menu_screen.visible = false
 	credits_screen.visible = true
 
 func _on_btn_start_pressed():
+	if AudioManager: 
+		AudioManager.play_selected()
+		AudioManager.play_game_music()
+
 	_start_game()
 
 func _on_btn_exit_pressed():
+	if AudioManager: 
+		AudioManager.play_selected()
 	get_tree().quit()
 
 func _on_btn_settings_pressed():
+	if AudioManager: 
+		AudioManager.play_selected()
 	print("[Game] Juego en pausa.")
 	get_tree().paused = true
 	pause_screen.visible = true
@@ -117,6 +131,8 @@ func _on_btn_settings_pressed():
 	_disable_vehicle_controls()
 
 func _on_btn_continue_pressed():
+	if AudioManager: 
+		AudioManager.play_selected()
 	print("[Game] Continuando partida.")
 	get_tree().paused = false
 	pause_screen.visible = false
@@ -126,9 +142,13 @@ func _on_btn_continue_pressed():
 	_enable_vehicle_controls()
 
 func _on_btn_restart_pressed():
+	if AudioManager: 
+		AudioManager.play_selected()
 	restart_game()
 	
 func _on_btn_instructions_pressed ():
+	if AudioManager: 
+		AudioManager.play_selected()
 	print("Esto es una prueba de que se presiono el boton de instrucciones")
 	if game_running: 
 		pause_screen.visible = false
@@ -137,6 +157,8 @@ func _on_btn_instructions_pressed ():
 	instruction_screen.visible = true
 	
 func _on_btn_exit_instructions_pressed():
+	if AudioManager: 
+		AudioManager.play_selected()
 	instruction_screen.visible = false
 	if game_running:
 		pause_screen.visible = true
@@ -165,6 +187,9 @@ func _start_game():
 	_update_timer_label()
 
 func _end_game():
+	if AudioManager: 
+		AudioManager.stop_music()
+		AudioManager.play_game_over_sound()
 	print("[Game] Fin del juego.")
 	game_running = false
 	_disable_vehicle_controls()

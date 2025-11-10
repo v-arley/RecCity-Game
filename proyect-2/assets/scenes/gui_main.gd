@@ -46,8 +46,12 @@ func _ready():
 		button_continue.pressed.connect(_on_button_continue_pressed)
 
 func _on_button_start_pressed():
+	print("El boton start ha sido presionado")
 	if MenuScreen: MenuScreen.hide()
 	if GameScreen: GameScreen.show()
+	if AudioManager: 
+		AudioManager.play_selected()
+		AudioManager.play_game_music()
 
 func _on_button_exit_pressed():
 	get_tree().quit()

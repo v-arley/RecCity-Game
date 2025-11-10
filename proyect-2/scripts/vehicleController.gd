@@ -113,6 +113,8 @@ func _take_damage(amount: float):
 	health = max(0.0, health - amount)
 	print("[Vehicle] Daño:", amount, " | Vida:", health)
 	emit_signal("vehicle_damaged", health)
+	if AudioManager:
+		AudioManager.play_crash_sound()
 
 	if health <= 0.0:
 		can_drive = false

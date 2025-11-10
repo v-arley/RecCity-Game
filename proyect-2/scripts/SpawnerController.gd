@@ -163,6 +163,8 @@ func _on_area_body_entered(body, spawned_obj: Node3D):
 			spawned_objects_list.erase(spawned_obj)
 			
 			print("[Recolección] Camión recogió:", trash_type)
+			if AudioManager:
+				AudioManager.play_pickup_sound()
 			# Guardar datos de la basura recogida
 			carrying_trash = true
 			carried_trash_type = trash_type

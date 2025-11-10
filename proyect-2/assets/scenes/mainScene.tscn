@@ -841,9 +841,10 @@ process_mode = 3
 visible = false
 
 [node name="TextureRect" type="TextureRect" parent="InstructionScreen"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_bottom = 0.023000002
+offset_right = 1180.0
+offset_bottom = 703.44
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("19_shhps")
@@ -861,32 +862,43 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("29_shhps")
+theme_override_fonts/bold_font = ExtResource("29_shhps")
+theme_override_fonts/bold_italics_font = ExtResource("29_shhps")
+theme_override_fonts/italics_font = ExtResource("29_shhps")
+theme_override_fonts/mono_font = ExtResource("29_shhps")
 bbcode_enabled = true
-text = "[font_size=24][color=#000000][b]🎮 CONTROLS[/b][/color][/font_size]
-[indent][font_size=18]• [b][color=#E91E63]W[/color][/b] – Move forward
-• [b][color=#E91E63]S[/color][/b] – Move backward  
-• [b][color=#E91E63]A[/color][/b] – Turn left
-• [b][color=#E91E63]D[/color][/b] – Turn right
-• [b][color=#9C27B0]Spacebar[/color][/b] – Brake / Emergency stop
-• [b][color=#9C27B0]E[/color][/b] – Collect trash
-• [b][color=#9C27B0]Mouse[/color][/b] – Look around (if enabled)[/font_size][/indent]
+text = "[center]
+[font_size=28][wave amp=30.0 freq=3.0][b][color=#2E8B57]🚛 HOW TO PLAY - RC GAME[/color][/b][/wave][/font_size]
 
-[font_size=24][color=#000000][b]⚙️ OTHER ACTIONS[/b][/color][/font_size]
-[indent][font_size=18]• Tap the [b][color=#000000]gear icon (⚙️)[/color][/b] in the upper-left corner to pause the game
-• Press [b][color=#000000]ESC[/color][/b] to access pause menu
-• You can view these instructions from the [b][color=#000000]Pause Menu[/color][/b] or [b][color=#000000]Main Menu[/color][/b] anytime[/font_size][/indent]
+[font_size=22][b][color=#FF6B35]🎮 CONTROLS[/color][/b][/font_size]
+[font_size=18]• [b][color=#E91E63]W[/color][/b] – Move forward[/font_size]
+[font_size=18]• [b][color=#E91E63]S[/color][/b] – Move backward[/font_size]  
+[font_size=18]• [b][color=#E91E63]A[/color][/b] – Turn left[/font_size]
+[font_size=18]• [b][color=#E91E63]D[/color][/b] – Turn right[/font_size]
+[font_size=18]• [b][color=#9C27B0]SPACEBAR[/color][/b] – Brake / Emergency stop[/font_size]
+[font_size=18]• [b][color=#9C27B0]E[/color][/b] – Collect trash[/font_size]
+[font_size=18]• [b][color=#9C27B0]MOUSE[/color][/b] – Look around (if enabled)[/font_size]
 
-[font_size=24][color=#000000][b]🎯 GAME OBJECTIVES[/b][/color][/font_size]
-[indent][font_size=18]• Collect all trash scattered around the city
-• Avoid obstacles and traffic
-• Complete levels within time limit
-• Earn eco-points for cleaning[/font_size][/indent]
+[font_size=22][b][color=#FF6B35]⚙️ OTHER ACTIONS[/color][/b][/font_size]
+[font_size=18]• Tap the [b]gear icon (⚙️)[/b] in the upper-left corner to pause the game[/font_size]
+[font_size=18]• Press [b]ESC[/b] to access pause menu[/font_size]
+[font_size=18]• You can view these instructions from the [b]Pause Menu[/b] or [b]Main Menu[/b] anytime[/font_size]
 
-[font_size=24][color=#000000][b]💡 TIPS[/b][/color][/font_size]
-[indent][font_size=18]• Plan your route efficiently
-• Use brakes on sharp turns
-• Watch for pedestrians and vehicles
-• Recycle different types of trash for bonus points[/font_size][/indent]"
+[font_size=22][b][color=#FF6B35]🎯 GAME OBJECTIVES[/color][/b][/font_size]
+[font_size=18]• Collect all trash scattered around the city[/font_size]
+[font_size=18]• Avoid obstacles and traffic[/font_size]
+[font_size=18]• Complete levels within time limit[/font_size]
+[font_size=18]• Earn eco-points for cleaning[/font_size]
+
+[font_size=22][b][color=#FF6B35]💡 TIPS & STRATEGIES[/color][/b][/font_size]
+[font_size=18]• Plan your route efficiently[/font_size]
+[font_size=18]• Use brakes on sharp turns[/font_size]
+[font_size=18]• Watch for pedestrians and vehicles[/font_size]
+[font_size=18]• Recycle different types of trash for bonus points[/font_size]
+
+[font_size=24][shake rate=8.0 level=3.0][b][color=#228B22]Your mission: Clean the city and protect our environment! 🌍💚[/color][/b][/shake][/font_size]
+[/center]"
 fit_content = true
 autowrap_mode = 2
 
@@ -896,10 +908,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 287.99994
-offset_top = 270.0
-offset_right = 1527.0
-offset_bottom = 622.00073
+offset_left = 318.99994
+offset_top = 279.99994
+offset_right = 1558.0
+offset_bottom = 632.0007
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.22, 0.22)
@@ -941,6 +953,7 @@ stretch_mode = 6
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(1.0000002, 0.87999994)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CreditScreen/TextureRect/Control"]
 custom_minimum_size = Vector2(600, 600)
@@ -954,24 +967,36 @@ custom_minimum_size = Vector2(600, 600)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("29_shhps")
+theme_override_fonts/bold_font = ExtResource("29_shhps")
+theme_override_fonts/bold_italics_font = ExtResource("29_shhps")
+theme_override_fonts/italics_font = ExtResource("29_shhps")
+theme_override_fonts/mono_font = ExtResource("29_shhps")
 bbcode_enabled = true
 text = "[font_size=36][center][wave amp=50.0 freq=5.0][b][color=#2E8B57]🎮 RC GAME - CREDITS[/color][/b][/wave][/center][/font_size]
 
-[font_size=24][b][color=#FF6B35]🎓 ACADEMIC PROJECT[/color][/b][/font_size]
-[indent][font_size=18]• [b]Course:[/b] Video Game Programming Environment
+[font_size=24][b][color=#FF6B35]🎓 Final Project[/color][/b][/font_size]
+[indent][font_size=18]• [b]Course:[/b] Entornos de programación de videojuegos
 • [b]University:[/b] Universidad Nacional de Costa Rica (UNA)
 • [b]Professor:[/b] Deiver Herrera Sánchez[/font_size][/indent]
 
-[font_size=24][b][color=#FF6B35]👥 DEVELOPMENT TEAM[/color][/b][/font_size]
-[indent][font_size=18]• [b][color=#4A90E2]Allan Calderon Vargas[/color][/b] - Programmer & Designer
-• [b][color=#4A90E2]Jousten Blanco Fonseca[/color][/b] - Programmer & Designer  
-• [b][color=#4A90E2]Sebastián Granados Barrantes[/color][/b] - Programmer & Designer[/font_size][/indent]
+[font_size=24][b][color=#FF6B35]👥 Students [/color][/b][/font_size]
+[indent][font_size=18]• [b][color=#4A90E2]Allan Calderon Vargas[/color][/b] 
+• [b][color=#4A90E2]Jousten Blanco Fonseca[/color][/b]
+• [b][color=#4A90E2]Sebastián Granados Barrantes[/color][/b] 
+[/font_size][/indent]
 
 [font_size=24][b][color=#FF6B35]🎵 MUSIC & AUDIO[/color][/b][/font_size]
 [indent][font_size=18]• [b]Background Music:[/b] Poly Pizza
 • [b]Sound Effects:[/b] Poly Pizza
-• [b]Additional Audio:[/b] Various free sources
-• [b]Audio Implementation:[/b] Development Team[/font_size][/indent]
+• [b]Game Music:[/b] \"Platform Game Theme Loop.wav\"
+	 by Mrthenoronha (CC BY-NC 4.0)
+• [b]Ambient Sound:[/b] \"traffic outdoors sweden.wav\"
+	 by Harriiee (CC BY-NC 4.0)
+• [b]Game Over Sound:[/b] \"Video Game Death Sound Effect\"
+	 by harrietniamh (CC BY 4.0)
+• [b]UI Sounds:[/b] \"random_UI_selection\"
+	 by harrisonlace (CC0 1.0)
 
 [font_size=24][b][color=#FF6B35]🛠️ 3D MODELS & ASSETS[/color][/b][/font_size]
 [indent][font_size=18]• [b]Vehicle Models:[/b] Poly Pizza
@@ -986,17 +1011,13 @@ text = "[font_size=36][center][wave amp=50.0 freq=5.0][b][color=#2E8B57]🎮 RC 
 • [b]Version Control:[/b] Git[/font_size][/indent]
 
 [font_size=24][b][color=#FF6B35]🙏 SPECIAL THANKS[/color][/b][/font_size]
-[indent][font_size=18]• Professor Deiver Herrera Sánchez for guidance and mentorship
-• Universidad Nacional de Costa Rica for academic support
+[indent][font_size=18]• Professor Deiver Herrera Sánchez for being a great teacher ❤️
+• Universidad Nacional de Costa Rica for 4 years of torture 
 • Poly Pizza for providing quality free assets
-• Godot Engine Community for resources and support
-• All beta testers for valuable feedback[/font_size][/indent]
-
-[font_size=24][b][color=#FF6B35]📜 PROJECT INFORMATION[/color][/b][/font_size]
-[indent][font_size=18]• [b]Project Type:[/b] Academic - Educational purposes
-• [b]Development Period:[/b] Course duration
-• [b]Third-party Assets:[/b] Used under respective licenses
-• [b]Source Code:[/b] Developed exclusively for this course[/font_size][/indent]
+• Godot Engine, because it's a better engine than Unity
+• Freesound.org contributors for amazing audio resources
+• ChatGPT, Copilot, Deepseek and other AI tools 
+	for letting us cook[/font_size][/indent]
 
 [font_size=28][center][shake rate=10.0 level=5.0][b][color=#228B22]Thank you for playing RC Game! 🚛💚[/color][/b][/shake][/center][/font_size]"
 fit_content = true

@@ -17,6 +17,7 @@ var desired_position: Vector3
 var desired_rotation: Vector3
 
 func _ready():
+	print("AudioManager existe: ", AudioManager != null)
 	if not target_camera:
 		push_error("target_camera no está asignado.")
 		return
