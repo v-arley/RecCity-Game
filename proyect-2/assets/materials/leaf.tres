@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bjhusf8hgfc54"]
+
+[ext_resource type="Texture2D" uid="uid://dhus4ucfpm8tl" path="res://assets/models/details/Bush_Leaves_TwistedTree_C.png" id="1_x5sr4"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_x5sr4")
+albedo_texture_force_srgb = true
+normal_enabled = true
+uv1_world_triplanar = true

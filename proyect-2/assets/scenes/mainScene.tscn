@@ -1,22 +1,23 @@
-[gd_scene load_steps=52 format=3 uid="uid://byse3jpmgnpkm"]
+[gd_scene load_steps=54 format=3 uid="uid://byse3jpmgnpkm"]
 
 [ext_resource type="Sky" uid="uid://ber2txbf74tf4" path="res://assets/skyBox/sky01.tres" id="1_8jaiy"]
 [ext_resource type="Script" path="res://scripts/mainController.gd" id="1_llb4w"]
 [ext_resource type="PackedScene" uid="uid://b5c4y6d0mil15" path="res://assets/scenes/cityScene.tscn" id="2_im3ye"]
-[ext_resource type="PackedScene" uid="uid://b4rng5n2pcdmy" path="res://assets/scenes/TrashGlass.tscn" id="2_q43bj"]
-[ext_resource type="PackedScene" uid="uid://blx7sjvitg4rt" path="res://assets/scenes/VehicleScene.tscn" id="4_llb4w"]
+[ext_resource type="PackedScene" uid="uid://b4rng5n2pcdmy" path="res://assets/scenes/garbage/TrashGlass.tscn" id="2_q43bj"]
+[ext_resource type="Shader" uid="uid://dqfwte66cuajo" path="res://assets/materials/mainScene.gdshader" id="3_tq00l"]
+[ext_resource type="PackedScene" uid="uid://blx7sjvitg4rt" path="res://assets/scenes/vehicles/VehicleScene.tscn" id="4_llb4w"]
 [ext_resource type="PackedScene" uid="uid://el81eiqg4gjl" path="res://assets/scenes/GUIScene.tscn" id="6_h6nc3"]
 [ext_resource type="Script" uid="uid://dxc41d3abu7n4" path="res://scripts/SpawnerController.gd" id="6_igwmh"]
-[ext_resource type="PackedScene" uid="uid://dfeoqa7fn0vi1" path="res://assets/scenes/TrashPaper.tscn" id="8_c1ps1"]
-[ext_resource type="PackedScene" uid="uid://8mjgngou5bed" path="res://assets/scenes/TrashGeneral.tscn" id="9_128fa"]
-[ext_resource type="PackedScene" uid="uid://4fduf5fdk2s" path="res://assets/scenes/TrashMetal.tscn" id="10_gsncv"]
-[ext_resource type="PackedScene" uid="uid://duui1mlko4pfb" path="res://assets/scenes/TrashPlastic.tscn" id="11_j3j8d"]
+[ext_resource type="PackedScene" uid="uid://dfeoqa7fn0vi1" path="res://assets/scenes/garbage/TrashPaper.tscn" id="8_c1ps1"]
+[ext_resource type="PackedScene" uid="uid://8mjgngou5bed" path="res://assets/scenes/garbage/TrashGeneral.tscn" id="9_128fa"]
+[ext_resource type="PackedScene" uid="uid://4fduf5fdk2s" path="res://assets/scenes/garbage/TrashMetal.tscn" id="10_gsncv"]
+[ext_resource type="PackedScene" uid="uid://duui1mlko4pfb" path="res://assets/scenes/garbage/TrashPlastic.tscn" id="11_j3j8d"]
 [ext_resource type="Script" uid="uid://be826y3rcy55f" path="res://scripts/DeliveryController.gd" id="12_gsncv"]
-[ext_resource type="PackedScene" uid="uid://dedeiugljwody" path="res://assets/scenes/ContainerPaper.tscn" id="13_14mih"]
-[ext_resource type="PackedScene" uid="uid://ui2q1sjilg4u" path="res://assets/scenes/ContainerGlass.tscn" id="14_siqd4"]
-[ext_resource type="PackedScene" uid="uid://dtiw8t81oat7f" path="res://assets/scenes/ContainerMetal.tscn" id="15_gey70"]
-[ext_resource type="PackedScene" uid="uid://c8j7acteq7lb2" path="res://assets/scenes/ContainerPlastic.tscn" id="16_yst4h"]
-[ext_resource type="PackedScene" uid="uid://c15iusmi8pm2a" path="res://assets/scenes/ContainerGeneral.tscn" id="17_reuav"]
+[ext_resource type="PackedScene" uid="uid://dedeiugljwody" path="res://assets/scenes/containers/ContainerPaper.tscn" id="13_14mih"]
+[ext_resource type="PackedScene" uid="uid://ui2q1sjilg4u" path="res://assets/scenes/containers/ContainerGlass.tscn" id="14_siqd4"]
+[ext_resource type="PackedScene" uid="uid://dtiw8t81oat7f" path="res://assets/scenes/containers/ContainerMetal.tscn" id="15_gey70"]
+[ext_resource type="PackedScene" uid="uid://c8j7acteq7lb2" path="res://assets/scenes/containers/ContainerPlastic.tscn" id="16_yst4h"]
+[ext_resource type="PackedScene" uid="uid://c15iusmi8pm2a" path="res://assets/scenes/containers/ContainerGeneral.tscn" id="17_reuav"]
 [ext_resource type="Script" uid="uid://cldi82tvatrqy" path="res://scripts/GameController.gd" id="18_siqd4"]
 [ext_resource type="Texture2D" uid="uid://c0kt31g1lrx18" path="res://assets/textures/UIresource/background01.png" id="19_shhps"]
 [ext_resource type="Texture2D" uid="uid://bksb7lcn4ae7u" path="res://assets/textures/UIresource/Imagen1.png" id="20_dyyht"]
@@ -44,6 +45,12 @@
 [sub_resource type="Environment" id="Environment_q43bj"]
 background_mode = 2
 sky = ExtResource("1_8jaiy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8n1ii"]
+shader = ExtResource("3_tq00l")
+shader_parameter/grain_strength = 0.0
+shader_parameter/grain_speed = 0.1
+shader_parameter/vignette_intensity = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8n1ii"]
 bg_color = Color(0.18110761, 0.16669917, 0.25050288, 0.5372549)
@@ -103,10 +110,23 @@ environment = SubResource("Environment_q43bj")
 transform = Transform3D(-0.99997604, 0.003963857, -0.0056824936, 0.0003002804, 0.8441971, 0.53603286, 0.0069219023, 0.5360183, -0.844178, -0.36392888, 34.229805, -55.32812)
 fov = 90.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="WorldEnvironment"]
+
+[node name="ColorRect" type="ColorRect" parent="WorldEnvironment/CanvasLayer"]
+z_index = 100
+material = SubResource("ShaderMaterial_8n1ii")
+use_parent_material = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.078431375)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.011468281, -0.9968085, 0.07900192, 0.14704883, 0.07982937, 0.98590267, -0.9890627, 0.0003105309, 0.1474951, -4.2824554, 12.915024, 4.985775)
-light_color = Color(0.47872198, 0.49046135, 0.47087586, 1)
-light_energy = 3.833
+light_color = Color(0.8387153, 0.8462651, 0.833701, 1)
+light_energy = 0.0
 shadow_enabled = true
 
 [node name="Root" parent="." instance=ExtResource("2_im3ye")]
@@ -248,6 +268,7 @@ lbl_tag_organico = NodePath("../GameScreen/HBoxContainer1/VBoxContainer5/LblGene
 lbl_tag_metal = NodePath("../GameScreen/HBoxContainer1/VBoxContainer3/LblMetal")
 
 [node name="MenuScreen" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuScreen"]
 anchors_preset = 15
@@ -413,16 +434,17 @@ texture_normal = ExtResource("33_dyyht")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -67.5
-offset_right = 67.5
-offset_bottom = 62.0
+offset_left = -67.0
+offset_top = 28.0
+offset_right = 68.0
+offset_bottom = 90.0
 grow_horizontal = 2
 
 [node name="LblLife" type="Label" parent="GameScreen/VBoxContainer1"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("29_shhps")
 theme_override_font_sizes/font_size = 24
-text = "Vehicle Life"
+text = "LIFE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -437,15 +459,17 @@ fill_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -101.0
+offset_top = 18.0
+offset_right = -28.0
+offset_bottom = 76.0
 grow_horizontal = 0
 
 [node name="LblTime" type="Label" parent="GameScreen/VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("29_shhps")
 theme_override_font_sizes/font_size = 24
-text = "Time"
+text = "TIME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
